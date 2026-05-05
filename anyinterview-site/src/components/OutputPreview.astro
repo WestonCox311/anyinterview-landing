@@ -1,0 +1,421 @@
+---
+---
+<section class="output" id="output">
+  <div class="output-inner">
+    <div class="output-header">
+      <h2 class="output-title">
+        What you get back, <em>after the conversation.</em>
+      </h2>
+      <p class="output-sub">
+        A full transcript. A focused summary. The moments that matter, already surfaced.
+      </p>
+    </div>
+
+    <div class="output-composition">
+
+      <div class="transcript-card">
+        <div class="card-header">
+          <div class="card-header-left">
+            <div>
+              <div class="card-eyebrow">Transcript</div>
+              <div class="card-title">Senior Backend Engineer · Maya R.</div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="card-meta-tag">42 min</span>
+            <span class="card-meta-tag">Voice + Video</span>
+          </div>
+        </div>
+
+        <div class="transcript-body">
+          <div class="transcript-line">
+            <div class="transcript-time">02:14</div>
+            <div class="transcript-content">
+              <div class="transcript-speaker">Interviewer</div>
+              <div class="transcript-text">Tell me about a system you've built or led that you're proud of — what made it work?</div>
+            </div>
+          </div>
+          <div class="transcript-line candidate">
+            <div class="transcript-time">02:21</div>
+            <div class="transcript-content">
+              <div class="transcript-speaker">Maya</div>
+              <div class="transcript-text">So at my last company we had this notification system that was just constantly falling over. <mark>I rebuilt it around a queue with idempotency keys and circuit breakers</mark> — the thing I'm most proud of isn't the design, it's that we got from 60% reliability to four-nines without doubling the team.</div>
+            </div>
+          </div>
+          <div class="transcript-line">
+            <div class="transcript-time">03:48</div>
+            <div class="transcript-content">
+              <div class="transcript-speaker">Interviewer</div>
+              <div class="transcript-text">What was the hardest tradeoff you had to make on that project?</div>
+            </div>
+          </div>
+          <div class="transcript-line candidate">
+            <div class="transcript-time">03:54</div>
+            <div class="transcript-content">
+              <div class="transcript-speaker">Maya</div>
+              <div class="transcript-text">Probably the decision to deprecate the synchronous fallback. <mark>It would have been safer to leave it in</mark>, but it was hiding the real reliability problems and giving on-call a false sense of security…</div>
+            </div>
+          </div>
+          <div class="transcript-line">
+            <div class="transcript-time">07:22</div>
+            <div class="transcript-content">
+              <div class="transcript-speaker">Interviewer</div>
+              <div class="transcript-text">When do you reach for a queue versus a synchronous call?</div>
+            </div>
+          </div>
+          <div class="transcript-line candidate">
+            <div class="transcript-time">07:28</div>
+            <div class="transcript-content">
+              <div class="transcript-speaker">Maya</div>
+              <div class="transcript-text">My default is synchronous unless I have a real reason. Queues add operational surface — DLQs, replays, ordering guarantees. I reach for them when…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="card-header">
+          <div class="card-header-left">
+            <div>
+              <div class="card-eyebrow">AI Summary</div>
+              <div class="card-title">Auto-generated, reviewable</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-body">
+          <div class="summary-section">
+            <h4>Bottom line</h4>
+            <div class="summary-tldr">
+              Strong technical operator. Clear thinking on <em>reliability tradeoffs</em>, opinionated about defaults, owns the operational consequences of her design choices.
+            </div>
+          </div>
+
+          <div class="summary-section">
+            <h4>Strengths</h4>
+            <ul class="summary-points">
+              <li><span class="marker">+</span><span>Explicit about tradeoffs, not just decisions</span></li>
+              <li><span class="marker">+</span><span>Real operational ownership — measures herself on outcomes</span></li>
+              <li><span class="marker">+</span><span>Healthy skepticism toward complexity</span></li>
+            </ul>
+          </div>
+
+          <div class="summary-section">
+            <h4>Worth probing</h4>
+            <ul class="summary-points">
+              <li><span class="marker">?</span><span>Cross-team disagreement examples were thinner</span></li>
+              <li><span class="marker">?</span><span>Limited recent exposure to multi-region systems</span></li>
+            </ul>
+          </div>
+
+          <div class="summary-section">
+            <h4>Memorable moment</h4>
+            <div class="summary-quote">
+              "We got from sixty percent reliability to four-nines without doubling the team."
+              <span class="attr">— 02:21, on rebuilding the notification system</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-footer">
+          <span class="export-label">Export</span>
+          <div class="export-formats">
+            <a href="#" class="export-fmt">PDF</a>
+            <a href="#" class="export-fmt">DOCX</a>
+            <a href="#" class="export-fmt">ATS</a>
+            <a href="#" class="export-fmt">JSON</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  section.output {
+    position: relative;
+    z-index: 2;
+    background: var(--paper);
+    padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 56px);
+  }
+
+  .output-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .output-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(48px, 7vh, 72px);
+  }
+
+  h2.output-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.6vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  h2.output-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .output-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 18px;
+  }
+
+  .output-composition {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .transcript-card,
+  .summary-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card-header {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--paper-cool);
+  }
+  .card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .card-eyebrow {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .card-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-meta {
+    display: flex;
+    gap: 6px;
+    flex: 0 0 auto;
+  }
+  .card-meta-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .transcript-body {
+    padding: 22px 22px 24px;
+    max-height: 420px;
+    overflow: hidden;
+    position: relative;
+  }
+  .transcript-body::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--white));
+    pointer-events: none;
+  }
+
+  .transcript-line {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .transcript-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    flex: 0 0 auto;
+    width: 38px;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+  .transcript-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .transcript-speaker {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .transcript-line.candidate .transcript-speaker {
+    color: var(--ink-mute);
+  }
+  .transcript-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .transcript-text mark {
+    background: linear-gradient(to bottom, transparent 50%, var(--accent-soft) 50%);
+    padding: 0 1px;
+    color: var(--ink);
+  }
+
+  .summary-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .summary-body {
+    padding: 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .summary-section h4 {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+
+  .summary-tldr {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .summary-tldr em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .summary-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .summary-points li {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .summary-points .marker {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .summary-quote {
+    background: var(--paper-cool);
+    border-left: 2px solid var(--accent);
+    padding: 12px 14px;
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink);
+    border-radius: 0 8px 8px 0;
+  }
+  .summary-quote .attr {
+    display: block;
+    margin-top: 6px;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.01em;
+  }
+
+  .summary-footer {
+    border-top: 1px solid var(--rule);
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--paper-cool);
+  }
+  .export-label {
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+  .export-formats {
+    display: flex;
+    gap: 6px;
+  }
+  .export-fmt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+  }
+  .export-fmt:hover {
+    color: var(--accent);
+    border-color: var(--accent-soft);
+  }
+
+  @media (max-width: 900px) {
+    .output-composition { grid-template-columns: 1fr; }
+  }
+</style>

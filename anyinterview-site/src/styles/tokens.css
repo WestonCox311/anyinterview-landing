@@ -1,0 +1,19 @@
+:root {
+  --paper: #f5f2ea;
+  --paper-warm: #ede8da;
+  --paper-cool: #f9f6ee;
+  --ink: #0a1628;
+  --ink-soft: #1f2d44;
+  --ink-mute: #5b6478;
+  --ink-faint: #9ba3b3;
+  --rule: #d6cfbf;
+  --accent: #1d3557;
+  --accent-bright: #2a4a7c;
+  --accent-soft: #d8e0ec;
+  --accent-faint: #ecf0f6;
+  --field-bg: #fbf9f3;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 0 rgba(10,22,40,0.04);
+  --shadow-md: 0 1px 0 rgba(10,22,40,0.04), 0 12px 40px -14px rgba(10,22,40,0.10);
+  --shadow-lg: 0 1px 0 rgba(10,22,40,0.04), 0 24px 60px -20px rgba(10,22,40,0.18);
+}

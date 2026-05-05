@@ -1,0 +1,230 @@
+---
+---
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#" class="wordmark">AnyInterview<span class="dot">.to</span></a>
+        <p class="footer-tag">
+          Conduct any structured interview without being in the room.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></a>
+          <a href="#" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>For</h4>
+        <ul>
+          <li><a href="#">Hiring &amp; Recruiting</a></li>
+          <li><a href="#">Customer Discovery</a></li>
+          <li><a href="#">User Research</a></li>
+          <li><a href="#">Audit &amp; Compliance</a></li>
+          <li><a href="#">Legal Intake</a></li>
+          <li><a href="#">HR &amp; People</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Templates</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li><a href="#">Changelog <span class="badge">New</span></a></li>
+          <li><a href="#">API</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Manifesto</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Security &amp; Compliance</a></li>
+          <li><a href="#">Trust Center</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Status</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-mark">© 2026 AnyInterview, Inc. — Bilocation, finally.</div>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+        <a href="#">DPA</a>
+        <a href="#">Subprocessors</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  footer.site-footer {
+    position: relative;
+    z-index: 2;
+    background: var(--paper-warm);
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 56px) 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(4, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+    margin-bottom: 56px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 280px;
+  }
+  .footer-brand .wordmark { font-size: 22px; }
+  .footer-tag {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .footer-social {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .footer-social a {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    color: var(--ink-mute);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .footer-social a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--paper);
+  }
+  .footer-social svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  .footer-col h4 {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 18px;
+  }
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-col a {
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-col a .badge {
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 1px;
+  }
+  .wordmark .dot {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12.5px;
+    color: var(--ink-mute);
+  }
+  .footer-bottom .legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-bottom a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-bottom a:hover { color: var(--accent); }
+
+  .footer-mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+
+  @media (max-width: 1100px) {
+    .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+</style>

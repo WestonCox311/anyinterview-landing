@@ -1,0 +1,110 @@
+---
+---
+<section class="manifesto" id="manifesto">
+  <div class="manifesto-inner">
+    <div class="manifesto-mark">&ldquo;</div>
+    <div class="manifesto-eyebrow">Why we built this</div>
+    <div class="manifesto-body">
+      <p>
+        For centuries, people have wanted to be in <em>more than one place at once.</em>
+        The bottleneck of every job that depends on understanding people has always been the same:
+        <strong>one person, in one chair, having one conversation at a time.</strong>
+      </p>
+      <p>
+        AnyInterview is what you get when that stops being true.
+      </p>
+    </div>
+    <div class="manifesto-signature">
+      <span class="names">Amdal &amp; Weston</span> · co-founders
+    </div>
+  </div>
+</section>
+
+<style>
+  section.manifesto {
+    position: relative;
+    z-index: 2;
+    background: var(--paper);
+    padding: clamp(100px, 16vh, 180px) clamp(20px, 5vw, 56px);
+    overflow: hidden;
+  }
+  section.manifesto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 30%, rgba(29,53,87,0.06), transparent 60%);
+  }
+
+  .manifesto-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .manifesto-mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 60px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.4;
+  }
+
+  .manifesto-eyebrow {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .manifesto-eyebrow::before, .manifesto-eyebrow::after {
+    content: "";
+    width: 22px; height: 1px;
+    background: var(--rule);
+  }
+
+  .manifesto-body {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .manifesto-body p {
+    margin-bottom: 1.4em;
+  }
+  .manifesto-body p:last-child { margin-bottom: 0; }
+  .manifesto-body em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .manifesto-body strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .manifesto-signature {
+    margin-top: 48px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-mute);
+  }
+  .manifesto-signature .names {
+    color: var(--ink);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+  }
+</style>

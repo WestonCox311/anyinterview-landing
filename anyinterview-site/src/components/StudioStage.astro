@@ -1,0 +1,614 @@
+---
+---
+<div id="studio-stage">
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <a href="#" class="wordmark" id="studioHomeLink">AnyInterview<span class="dot">.to</span></a>
+      <button class="icon-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+    </div>
+
+    <button class="new-btn" id="sidebarNewBtn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      New interview
+    </button>
+
+    <div class="sidebar-scroll">
+      <div class="folder">
+        <button class="folder-header">
+          <svg class="chev" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          Recent
+        </button>
+        <div class="folder-items">
+          <button class="folder-item active"><span class="dot"></span><span class="folder-item-meta">Senior Backend Engineer</span></button>
+          <button class="folder-item draft"><span class="dot"></span><span class="folder-item-meta">Customer onboarding research</span></button>
+          <button class="folder-item live"><span class="dot"></span><span class="folder-item-meta">Q2 exit interviews</span></button>
+        </div>
+      </div>
+
+      <div class="folder">
+        <button class="folder-header">
+          <svg class="chev" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          Hiring
+        </button>
+        <div class="folder-items">
+          <button class="folder-item live"><span class="dot"></span><span class="folder-item-meta">Frontend Engineer · Live</span></button>
+          <button class="folder-item live"><span class="dot"></span><span class="folder-item-meta">Sales Development Rep</span></button>
+          <button class="folder-item draft"><span class="dot"></span><span class="folder-item-meta">Product Designer</span></button>
+        </div>
+      </div>
+
+      <div class="folder">
+        <button class="folder-header">
+          <svg class="chev" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          Research
+        </button>
+        <div class="folder-items">
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">Pricing JTBD study</span></button>
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">Churn interviews · cohort 4</span></button>
+        </div>
+      </div>
+
+      <div class="folder collapsed">
+        <button class="folder-header">
+          <svg class="chev" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          Templates
+        </button>
+        <div class="folder-items">
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">Engineering screen</span></button>
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">User research — JTBD</span></button>
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">Stay interview</span></button>
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">SOC 2 walkthrough</span></button>
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">Legal intake — PI</span></button>
+        </div>
+      </div>
+
+      <div class="folder collapsed">
+        <button class="folder-header">
+          <svg class="chev" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          Archive
+        </button>
+        <div class="folder-items">
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">Q1 2026 hiring</span></button>
+          <button class="folder-item"><span class="dot"></span><span class="folder-item-meta">2025 user research</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <button>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 11H5m7-7v14"/><circle cx="12" cy="12" r="10"/></svg>
+        Templates library
+      </button>
+      <button>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+      <div class="user-card">
+        <div class="avatar">W</div>
+        <div class="user-info">
+          <div class="name">Weston Allen</div>
+          <div class="org">AnyInterview · Pro</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <section class="chat-pane">
+    <div class="chat-header">
+      <div class="chat-title">
+        Untitled interview
+        <span class="status-pill">Draft</span>
+      </div>
+      <div class="chat-actions">
+        <button class="icon-btn" aria-label="Share">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="More options">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="messages" id="messages"></div>
+
+    <div class="composer">
+      <div class="composer-inner">
+        <div class="composer-field">
+          <div class="composer-tools">
+            <button class="composer-tool" aria-label="Attach file"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+            <button class="composer-tool" aria-label="Voice input"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></button>
+          </div>
+          <textarea id="composerInput" class="composer-input" rows="1" placeholder="Refine the interview, add a question, change the tone…"></textarea>
+          <div class="composer-actions">
+            <button class="submit-btn" id="composerSendBtn" aria-label="Send message">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="composer-hint">
+          Press <kbd>Enter</kbd> to send · <kbd>⇧ Enter</kbd> for newline · <kbd>⌘ K</kbd> for templates
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="studio-pane">
+    <div class="studio-header">
+      <div class="studio-eyebrow">Studio · auto-generated</div>
+      <div class="studio-title">Senior Backend Engineer</div>
+    </div>
+    <div class="studio-tabs">
+      <button class="studio-tab active">Structure</button>
+      <button class="studio-tab">Voice</button>
+      <button class="studio-tab">Settings</button>
+      <button class="studio-tab">Preview</button>
+    </div>
+    <div class="studio-scroll" id="studioScroll"></div>
+    <div class="studio-footer">
+      <button class="btn-secondary">Save draft</button>
+      <button class="btn-primary">Get share link →</button>
+    </div>
+  </aside>
+
+</div>
+
+<script>import '../scripts/studio.ts';</script>
+
+<style>
+  #studio-stage {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    grid-template-columns: 260px 1fr 380px;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease 0.2s;
+  }
+  #studio-stage.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  aside.sidebar {
+    background: var(--paper-warm);
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s, opacity 0.6s ease 0.4s;
+  }
+  #studio-stage.visible aside.sidebar { transform: translateX(0); opacity: 1; }
+
+  .sidebar-top {
+    padding: 18px 16px 14px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-top .wordmark { font-size: 16px; }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 1px;
+  }
+  .wordmark .dot {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .new-btn {
+    width: calc(100% - 32px);
+    margin: 14px 16px;
+    padding: 10px 14px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .new-btn:hover { background: var(--accent); }
+  .new-btn:active { transform: scale(0.98); }
+  .new-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+
+  .sidebar-scroll { flex: 1; overflow-y: auto; padding: 4px 8px 16px; }
+  .sidebar-scroll::-webkit-scrollbar { width: 6px; }
+  .sidebar-scroll::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+
+  .folder { margin: 4px 0; }
+  .folder-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 10px; width: 100%; text-align: left;
+    color: var(--ink-mute);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border-radius: 6px; transition: color 0.15s ease;
+  }
+  .folder-header:hover { color: var(--ink-soft); }
+  .folder-header .chev {
+    width: 10px; height: 10px;
+    transition: transform 0.2s ease;
+    color: var(--ink-faint);
+  }
+  .folder.collapsed .chev { transform: rotate(-90deg); }
+  .folder-items { overflow: hidden; max-height: 1000px; transition: max-height 0.3s ease; }
+  .folder.collapsed .folder-items { max-height: 0; }
+
+  .folder-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 7px 10px 7px 28px;
+    border-radius: 6px;
+    color: var(--ink-soft);
+    font-size: 13.5px; line-height: 1.3;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+    width: 100%; text-align: left; cursor: pointer;
+  }
+  .folder-item:hover { background: rgba(29,53,87,0.06); color: var(--ink); }
+  .folder-item.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .folder-item .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+    flex: 0 0 auto;
+  }
+  .folder-item.active .dot { background: var(--accent); }
+  .folder-item.draft .dot { background: #d4a73a; }
+  .folder-item.live .dot { background: #2d8659; }
+
+  .folder-item-meta {
+    flex: 1; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
+  }
+
+  .sidebar-bottom {
+    padding: 12px;
+    border-top: 1px solid var(--rule);
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .sidebar-bottom button {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 10px;
+    border-radius: 6px;
+    color: var(--ink-soft);
+    font-size: 13.5px; text-align: left;
+    transition: background 0.15s ease;
+  }
+  .sidebar-bottom button:hover { background: rgba(29,53,87,0.06); }
+  .sidebar-bottom svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  .user-card {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px; border-radius: 8px; margin-top: 8px;
+    background: rgba(29,53,87,0.04);
+  }
+  .avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--paper);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 500;
+  }
+  .user-info { flex: 1; min-width: 0; }
+  .user-info .name { font-size: 13px; color: var(--ink); font-weight: 500; }
+  .user-info .org { font-size: 11px; color: var(--ink-mute); }
+
+  .chat-pane {
+    background: var(--paper);
+    display: flex; flex-direction: column; overflow: hidden;
+    opacity: 0; transition: opacity 0.5s ease 0.5s;
+  }
+  #studio-stage.visible .chat-pane { opacity: 1; }
+
+  .chat-header {
+    padding: 18px 32px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--paper);
+  }
+  .chat-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px; font-weight: 500;
+    color: var(--ink);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .status-pill {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: #d4a73a;
+    background: rgba(212,167,58,0.12);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .chat-actions { display: flex; gap: 6px; }
+  .icon-btn {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    color: var(--ink-mute);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .icon-btn:hover { background: rgba(29,53,87,0.06); color: var(--ink); }
+  .icon-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  .messages {
+    flex: 1; overflow-y: auto;
+    padding: 32px 32px 16px;
+    display: flex; flex-direction: column; gap: 28px;
+  }
+  .messages::-webkit-scrollbar { width: 8px; }
+  .messages::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 4px; }
+
+  .msg {
+    display: flex; gap: 14px;
+    max-width: 720px; width: 100%; margin: 0 auto;
+    opacity: 0; transform: translateY(8px);
+    animation: msgIn 0.5s ease forwards;
+  }
+  .msg-avatar {
+    flex: 0 0 auto;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 500; margin-top: 2px;
+  }
+  .msg.user .msg-avatar { background: var(--ink); color: var(--paper); }
+  .msg.ai .msg-avatar {
+    background: var(--accent-soft); color: var(--accent);
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 14px;
+  }
+
+  .msg-body { flex: 1; padding-top: 4px; }
+  .msg-author {
+    font-size: 12px; font-weight: 500;
+    color: var(--ink-mute); margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  .msg-content { font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
+  .msg-content p { margin-bottom: 10px; }
+  .msg-content p:last-child { margin-bottom: 0; }
+  .msg-content strong { color: var(--ink); font-weight: 600; }
+  .msg-content em { color: var(--accent); font-style: italic; }
+
+  .typing-cursor {
+    display: inline-block;
+    width: 7px; height: 16px;
+    background: var(--accent);
+    vertical-align: -2px; margin-left: 2px;
+    animation: blink 1s infinite;
+  }
+
+  .action-card {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .action-card .label { flex: 1; color: var(--ink-mute); }
+  .action-card .label strong { color: var(--ink); font-weight: 500; }
+  .action-card button {
+    font-size: 13px; color: var(--accent);
+    font-weight: 500; padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+  }
+  .action-card button:hover { background: var(--accent-soft); }
+
+  .composer {
+    padding: 16px 32px 24px;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+  .composer-inner { max-width: 720px; margin: 0 auto; }
+  .composer-field {
+    background: var(--field-bg);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex; align-items: flex-start; gap: 12px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .composer-field:focus-within {
+    border-color: var(--ink-soft);
+    background: var(--white);
+  }
+  .composer-input {
+    flex: 1; border: none; background: transparent; outline: none;
+    font-size: 14.5px; line-height: 1.5;
+    color: var(--ink); resize: none;
+    min-height: 22px; max-height: 140px;
+  }
+  .composer-input::placeholder { color: var(--ink-faint); font-style: italic; }
+  .composer-actions { display: flex; gap: 6px; align-items: center; }
+  .composer-tools { display: flex; gap: 4px; margin-right: 4px; }
+  .composer-tool {
+    width: 28px; height: 28px;
+    color: var(--ink-faint);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .composer-tool:hover { color: var(--ink-soft); background: rgba(29,53,87,0.06); }
+  .composer-tool svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  .submit-btn {
+    flex: 0 0 auto;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .submit-btn:hover { background: var(--accent); transform: scale(1.06); }
+  .submit-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+
+  .composer-hint {
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    text-align: center;
+    font-style: italic;
+  }
+  .composer-hint kbd {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--ink-mute);
+    font-style: normal;
+  }
+
+  .studio-pane {
+    background: var(--paper-cool);
+    border-left: 1px solid var(--rule);
+    display: flex; flex-direction: column; overflow: hidden;
+    transform: translateX(20px); opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s, opacity 0.6s ease 0.5s;
+  }
+  #studio-stage.visible .studio-pane { transform: translateX(0); opacity: 1; }
+
+  .studio-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .studio-eyebrow {
+    font-size: 10.5px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-mute); margin-bottom: 4px;
+  }
+  .studio-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px; font-weight: 500;
+    color: var(--ink); line-height: 1.3;
+  }
+
+  .studio-tabs {
+    display: flex; gap: 4px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-cool);
+  }
+  .studio-tab {
+    padding: 12px 12px;
+    font-size: 13px; color: var(--ink-mute);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .studio-tab:hover { color: var(--ink-soft); }
+  .studio-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 500;
+  }
+
+  .studio-scroll {
+    flex: 1; overflow-y: auto;
+    padding: 20px 24px 24px;
+  }
+  .studio-scroll::-webkit-scrollbar { width: 6px; }
+  .studio-scroll::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+
+  .studio-section {
+    margin-bottom: 24px;
+    opacity: 0; transform: translateY(8px);
+    animation: studioFade 0.5s ease forwards;
+  }
+  .studio-section h3 {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-mute); margin-bottom: 10px;
+  }
+
+  .studio-meta {
+    margin-bottom: 20px;
+  }
+
+  .meta-cell {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px; padding: 12px;
+    margin-bottom: 8px;
+  }
+  .meta-cell .meta-label {
+    font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--ink-faint);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .meta-cell .meta-value {
+    font-size: 14px; color: var(--ink); font-weight: 500;
+  }
+
+  .studio-footer {
+    padding: 14px 24px;
+    border-top: 1px solid var(--rule);
+    display: flex; gap: 10px;
+    background: var(--paper-cool);
+  }
+  .btn-secondary {
+    flex: 1; padding: 10px 14px;
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    color: var(--ink-soft);
+    font-size: 13.5px; font-weight: 500;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-secondary:hover { background: var(--white); border-color: var(--ink-soft); }
+  .btn-primary {
+    flex: 1.4; padding: 10px 14px;
+    background: var(--ink); color: var(--paper);
+    border-radius: 8px;
+    font-size: 13.5px; font-weight: 500;
+    transition: background 0.15s ease;
+  }
+  .btn-primary:hover { background: var(--accent); }
+
+  @media (max-width: 1100px) {
+    #studio-stage { grid-template-columns: 220px 1fr 340px; }
+  }
+  @media (max-width: 900px) {
+    #studio-stage { grid-template-columns: 200px 1fr; }
+    .studio-pane { display: none; }
+  }
+  @media (max-width: 720px) {
+    #studio-stage { grid-template-columns: 1fr; }
+    aside.sidebar { display: none; }
+  }
+</style>

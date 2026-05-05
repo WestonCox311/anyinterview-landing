@@ -1,0 +1,173 @@
+---
+---
+<section class="diff" id="diff">
+  <div class="diff-inner">
+    <div class="diff-header">
+      <h2 class="diff-title">
+        Built <em>differently.</em>
+      </h2>
+      <p class="diff-sub">Not another async video tool. Not another transcript app. Something else.</p>
+    </div>
+
+    <div class="diff-stack">
+
+      <div class="diff-row">
+        <div class="diff-headline">
+          <span class="strike">Async video.</span><br/>
+          <em>A real conversation.</em>
+        </div>
+        <div class="diff-body">
+          Async video tools record candidates answering preset questions into the void. They don't
+          adapt, they don't probe, they don't follow up. <strong>AnyInterview talks back</strong> —
+          asks follow-ups when an answer is thin, adapts to what the interviewee actually says.
+          It's a conversation, not a recital.
+        </div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-headline">
+          <span class="strike">A transcription tool.</span><br/>
+          <em>A conversation that runs itself.</em>
+        </div>
+        <div class="diff-body">
+          Otter records meetings you've already taken. Fireflies summarizes calls you already conducted.
+          <strong>AnyInterview conducts the call.</strong> The transcript and summary are the byproduct,
+          not the product. The bottleneck wasn't documentation — it was finding time to have the
+          conversation in the first place.
+        </div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-headline">
+          <span class="strike">Just hiring.</span><br/>
+          <em>Any structured conversation worth having more of.</em>
+        </div>
+        <div class="diff-body">
+          Most interview tools only do hiring — and only one kind of hiring. <strong>AnyInterview is
+          built for the whole shape of the problem</strong>: recruiting, research, discovery, audit,
+          intake, exit, and everywhere structured conversations are the bottleneck. The unscalable
+          part is the same in all of them. So is the fix.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  section.diff {
+    position: relative;
+    z-index: 2;
+    background: var(--paper);
+    padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 56px);
+  }
+
+  .diff-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .diff-header {
+    text-align: center;
+    margin-bottom: clamp(56px, 8vh, 88px);
+  }
+
+  h2.diff-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.6vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  h2.diff-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .diff-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 18px;
+  }
+
+  .diff-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .diff-row {
+    background: var(--field-bg);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: clamp(28px, 4vw, 48px);
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: clamp(24px, 4vw, 56px);
+    align-items: start;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+  .diff-row.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .diff-row:hover {
+    background: var(--white);
+    border-color: var(--ink-faint);
+  }
+  .diff-row::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: -1px;
+    width: 3px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+    opacity: 0.7;
+  }
+
+  .diff-headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(22px, 2.8vw, 32px);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .diff-headline .strike {
+    color: var(--ink-mute);
+    text-decoration: line-through;
+    text-decoration-color: var(--ink-faint);
+    text-decoration-thickness: 1px;
+    font-weight: 300;
+  }
+  .diff-headline em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .diff-body {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  .diff-body strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .diff-row { grid-template-columns: 1fr; gap: 16px; }
+  }
+</style>

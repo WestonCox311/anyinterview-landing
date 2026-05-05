@@ -1,0 +1,145 @@
+---
+---
+<section class="closing">
+  <div class="closing-inner">
+    <h2 class="closing-title">
+      Be in <em>two places at once.</em><br/>
+      Or fifty. Or a hundred.
+    </h2>
+    <p class="closing-sub">
+      The conversations that have always been your bottleneck don't have to be anymore.
+      Set up your first interview in 90 seconds.
+    </p>
+    <div class="closing-actions">
+      <a href="#" class="closing-cta" id="closingScrollBtn">
+        Build your first interview
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#" class="closing-secondary" data-action="open-demo">
+        or talk to our team →
+      </a>
+    </div>
+    <div class="closing-meta">
+      Free to try <span class="dot"></span> No credit card <span class="dot"></span> 90 seconds to share link
+    </div>
+  </div>
+</section>
+
+<style>
+  section.closing {
+    position: relative;
+    z-index: 2;
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(100px, 16vh, 180px) clamp(20px, 5vw, 56px);
+    overflow: hidden;
+  }
+  section.closing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 60% at 30% 30%, rgba(29,53,87,0.4), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 80%, rgba(29,53,87,0.3), transparent 60%);
+  }
+  section.closing::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    mix-blend-mode: screen;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .closing-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  h2.closing-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--paper);
+    margin-bottom: 32px;
+  }
+  h2.closing-title em {
+    font-style: italic;
+    color: #c4d2e8;
+    font-weight: 400;
+  }
+
+  .closing-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(17px, 1.6vw, 22px);
+    line-height: 1.55;
+    color: rgba(245,242,234,0.75);
+    max-width: 60ch;
+    margin: 0 auto 48px;
+  }
+
+  .closing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 16px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .closing-cta:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px -12px rgba(0,0,0,0.4);
+  }
+  .closing-cta svg {
+    width: 17px; height: 17px;
+    stroke: currentColor; fill: none; stroke-width: 2.2;
+  }
+
+  .closing-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .closing-secondary {
+    color: rgba(245,242,234,0.78);
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    transition: color 0.2s ease;
+  }
+  .closing-secondary:hover { color: var(--paper); }
+
+  .closing-meta {
+    margin-top: 18px;
+    font-size: 12.5px;
+    color: rgba(245,242,234,0.6);
+    letter-spacing: 0.04em;
+  }
+  .closing-meta .dot {
+    display: inline-block;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(245,242,234,0.5);
+    margin: 0 8px 2px;
+    vertical-align: middle;
+  }
+</style>

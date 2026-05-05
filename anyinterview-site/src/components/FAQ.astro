@@ -1,0 +1,257 @@
+---
+---
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <h2 class="faq-title">
+        Common <em>questions.</em>
+      </h2>
+    </div>
+
+    <div class="faq-columns">
+
+      <div class="faq-column">
+        <div class="faq-column-header">About the product</div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Does the AI sound robotic?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                No. AnyInterview uses <strong>state-of-the-art conversational voice models</strong> that pause, breathe, ask clarifying follow-ups, and adapt to what the interviewee actually says. Most candidates and research participants describe it as feeling like a real conversation. Happy to send you a sample recording.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Can interviewees cheat with ChatGPT?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Cheating prevention is one of the reasons AnyInterview exists in 2026. For high-stakes interviews, our proctoring layer detects off-screen assistance, copy-paste activity, and unusual response patterns — <strong>without</strong> the lockdown browsers and surveillance theater that drive good candidates away.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What does the candidate experience look like?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Interviewees click a link, see a clear AI-interview disclosure, and consent before beginning. The conversation feels natural — they can pause, resume, ask for clarification, or skip questions. <strong>No app to install. No login required.</strong> Works on any modern browser, on any device.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Does it integrate with my ATS / CRM / audit platform?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Yes — Greenhouse, Lever, Bullhorn, Workday, BambooHR, Salesforce, HubSpot, AuditBoard, Workiva, and most major platforms via direct integration. For everything else, we offer a robust API and webhooks. <strong>Enterprise customers get dedicated integration support during onboarding.</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="faq-column">
+        <div class="faq-column-header">About trust &amp; compliance</div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Do you train your models on our data?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <strong>No.</strong> Your interviews are yours. We don't use your data to train models, we don't sell it, we don't share it with third parties for analytics or advertising. Period. You can export everything anytime, and we'll delete it on request.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Is this legal where I work?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                In nearly every jurisdiction, structured AI interviews with disclosure and recorded consent are legal — and AnyInterview handles disclosure and consent automatically. Specific regions (Illinois, Maryland, NYC for hiring AI; the EU under GDPR) have requirements we comply with by default. Recording consent flows are <strong>state-aware</strong> for one-party and two-party jurisdictions.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How do you handle attorney-client privilege?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                AnyInterview is designed not to constitute the unauthorized practice of law. The AI <strong>never advises clients; it gathers facts.</strong> Privilege-aware design protects client confidentiality, transcripts are encrypted and access-controlled, and we have a documented subpoena response policy. Contact our team for our legal-ethics brief.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How does AnyInterview support audit standards?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                AnyInterview is positioned as a <strong>preparation and documentation tool</strong> — auditors review the transcript and exercise professional skepticism on every workpaper. Built with PCAOB AS 1105, AICPA AT-C, and ISA 230 in mind. Outputs export workpaper-ready to AuditBoard, Workiva, and standalone formats.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>import '../scripts/faq-accordion.ts';</script>
+
+<style>
+  section.faq {
+    position: relative;
+    z-index: 2;
+    background: var(--paper);
+    padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 56px);
+  }
+
+  .faq-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .faq-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 64px);
+  }
+
+  .faq-column-header {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: clamp(48px, 7vh, 72px);
+  }
+
+  h2.faq-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.6vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  h2.faq-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .faq-list {
+    border-top: 1px solid var(--rule);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(17px, 1.7vw, 22px);
+    line-height: 1.35;
+    color: var(--ink);
+    transition: color 0.2s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .faq-q:hover { color: var(--accent); }
+
+  .faq-icon {
+    flex: 0 0 auto;
+    width: 28px; height: 28px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, border-color 0.2s ease, background 0.2s ease;
+    position: relative;
+  }
+  .faq-icon::before, .faq-icon::after {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 1.5px;
+    background: var(--ink-soft);
+    transition: transform 0.3s ease;
+  }
+  .faq-icon::after {
+    transform: rotate(90deg);
+  }
+  .faq-item.open .faq-icon {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .faq-item.open .faq-icon::before { background: var(--accent); }
+  .faq-item.open .faq-icon::after { transform: rotate(0); background: var(--accent); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease;
+    padding: 0 0 0 0;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding: 0 0 28px;
+  }
+  .faq-a-inner {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+  .faq-a-inner strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .faq-columns { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>

@@ -1,0 +1,260 @@
+---
+---
+<main class="hero">
+
+  <h1>
+    Conduct your<br/>
+    <span class="slot">
+      <span class="slot-words" id="slot">
+        <span class="slot-word active">capstone selection</span>
+        <span class="slot-word">source interviews</span>
+        <span class="slot-word">discovery calls</span>
+        <span class="slot-word">user research</span>
+        <span class="slot-word">churn interviews</span>
+        <span class="slot-word">hiring interviews</span>
+        <span class="slot-word">reference checks</span>
+        <span class="slot-word">audit walkthroughs</span>
+        <span class="slot-word">witness statements</span>
+        <span class="slot-word">exit interviews</span>
+      </span>
+      <svg class="underline-svg" viewBox="0 0 600 14" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 4 8 Q 80 2, 160 7 T 320 8 T 480 6 T 596 9" />
+      </svg>
+    </span><br/>
+    without being in the room.
+  </h1>
+
+  <p class="subhead">
+    Configure a structured conversation in chat. Send a link.
+    Get it back, transcribed and recorded — ready to use.
+  </p>
+
+  <div class="chat-wrap">
+    <form class="hero-chat" id="heroForm">
+      <div class="chat-glyph" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </div>
+      <textarea
+        id="heroInput"
+        class="hero-input"
+        rows="1"
+        placeholder="I want to interview senior engineers for a backend role…"
+        autocomplete="off"></textarea>
+      <button type="submit" class="submit-btn" aria-label="Start">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+
+    <div class="chips">
+      <button class="chip" data-prompt="I'm hiring for a senior backend engineer role. The interview should focus on system design, technical depth, and how they think about tradeoffs.">Hiring</button>
+      <button class="chip" data-prompt="I want to talk to early-stage SaaS founders about how they handle customer onboarding. 30-minute discovery interview.">Customer discovery</button>
+      <button class="chip" data-prompt="I need to interview users about their experience with our checkout flow. Focus on friction points and unmet expectations.">User research</button>
+      <button class="chip" data-prompt="I need a structured intake interview for new personal injury clients — accident details, injuries sustained, treatment received, prior history.">Legal intake</button>
+    </div>
+  </div>
+</main>
+
+<script>import '../scripts/hero-slot-rotation.ts';</script>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(40px, 8vh, 100px) clamp(20px, 5vw, 56px);
+    text-align: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6.4vw, 84px);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    max-width: 18ch;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.15s;
+  }
+
+  .slot {
+    position: relative;
+    display: inline-block;
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 500;
+    min-width: 11ch;
+  }
+
+  .slot-words {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    vertical-align: baseline;
+  }
+
+  .underline-svg {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -0.18em;
+    width: 100%; height: 0.22em;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .underline-svg path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawUnderline 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation-delay: 0.9s;
+  }
+
+  .subhead {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(17px, 1.5vw, 21px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 36px auto 0;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  .chat-wrap {
+    width: 100%;
+    max-width: 680px;
+    margin: 56px auto 0;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.7s;
+  }
+
+  .hero-chat {
+    position: relative;
+    background: var(--field-bg);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: var(--shadow-md);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  }
+  .hero-chat:focus-within {
+    border-color: var(--ink-soft);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .chat-glyph {
+    flex: 0 0 auto;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .chat-glyph svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; }
+
+  .hero-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+    resize: none;
+    min-height: 32px;
+    max-height: 140px;
+    padding-top: 4px;
+  }
+  .hero-input::placeholder {
+    color: var(--ink-faint);
+    font-style: italic;
+    transition: opacity 0.4s ease;
+  }
+  .hero-input.placeholder-fading::placeholder { opacity: 0; }
+
+  .submit-btn {
+    flex: 0 0 auto;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .submit-btn:hover { background: var(--accent); transform: scale(1.06); }
+  .submit-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .chip {
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: 8px 14px;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .chip::before {
+    content: "";
+    display: block;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+  .chip:hover {
+    color: var(--ink);
+    background: var(--white);
+    border-color: var(--ink-soft);
+    transform: translateY(-1px);
+  }
+
+  .scroll-cue {
+    margin-top: 80px;
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1.4s;
+  }
+  .scroll-cue::before, .scroll-cue::after {
+    content: "";
+    width: 22px; height: 1px;
+    background: var(--rule);
+  }
+</style>
