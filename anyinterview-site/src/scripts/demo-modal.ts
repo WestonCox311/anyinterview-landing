@@ -48,21 +48,17 @@ demoForm?.addEventListener('submit', async (e) => {
     demoSubmitBtn.disabled = true;
     demoSubmitBtn.textContent = 'Sending…';
   }
-  try {
-    const res = await fetch('/api/demo-request', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...payload, source: 'anyinterview.to', ts: new Date().toISOString() })
-    });
-    const json = await res.json() as { ok: boolean; error?: string };
-    if (!json.ok) throw new Error(json.error ?? 'unknown');
-    if (demoSuccessEmail) demoSuccessEmail.textContent = String(payload['email'] ?? '');
-    if (demoForm) demoForm.hidden = true;
-    if (demoSuccess) demoSuccess.hidden = false;
-  } catch {
-    if (demoSubmitBtn) {
-      demoSubmitBtn.disabled = false;
-      demoSubmitBtn.textContent = 'Try again';
-    }
-  }
+
+  // Notify founders via mailto as a reliable static-site fallback
+  const name = String(payload['name'] ?? '');
+  const email = String(payload['email'] ?? '');
+  const message = String(payload['message'] ?? '');
+  const subject = encodeURIComponent(`Demo request from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}\nTime: ${new Date().toISOString()}`);
+  window.open(`mailto:weston@anyinterview.to?subject=${subject}&body=${body}`, '_blank');
+
+  // Show success immediately
+  if (demoSuccessEmail) demoSuccessEmail.textContent = email;
+  if (demoForm) demoForm.hidden = true;
+  if (demoSuccess) demoSuccess.hidden = false;
 });
