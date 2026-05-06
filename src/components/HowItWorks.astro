@@ -20,11 +20,13 @@
       <p class="step-body">
         Tell us what kind of interview you need — in plain language, in chat. <strong>Role, questions, tone, length.</strong> Or start from a template built for your kind of work.
       </p>
-      <div class="step-vis" aria-hidden="true">
-        <div class="vis-chat">
-          <div class="glyph"></div>
-          <div class="typing"><span class="text">I want to interview senior engineers…</span></div>
-        </div>
+      <div class="step-photo" aria-hidden="true">
+        <img
+          src="/photography/how-it-works-typing/overhead-hands-keyboard.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
 
@@ -50,14 +52,13 @@
       <p class="step-body">
         The interview comes back to you <strong>transcribed, recorded, and summarized</strong> — with the moments that matter already surfaced. Read in five minutes what would have taken an hour to conduct.
       </p>
-      <div class="step-vis" aria-hidden="true">
-        <div class="vis-doc">
-          <div class="line full"></div>
-          <div class="line med"></div>
-          <div class="line highlight"></div>
-          <div class="line full"></div>
-          <div class="line short"></div>
-        </div>
+      <div class="step-photo" aria-hidden="true">
+        <img
+          src="/photography/how-it-works-debrief/woman-glasses-computer-intently.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
 
@@ -355,6 +356,29 @@
     opacity: 0.3;
     animation: scanLine 2.6s ease-in-out infinite;
   }
+
+  /* ── Step photo cards ── */
+  .step-photo {
+    margin-top: 30px;
+    height: 200px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--rule);
+  }
+  .step-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  /* Step 1: warm overhead keyboard — focus on the hands */
+  .step[data-step="1"] .step-photo img { object-position: center 45%; }
+  /* Step 3: screen-lit face — focus on the glasses/eyes */
+  .step[data-step="3"] .step-photo img { object-position: center 18%; }
+
+  .step:hover .step-photo img { transform: scale(1.04); }
 
   .how-closing {
     margin-top: clamp(60px, 8vh, 100px);
