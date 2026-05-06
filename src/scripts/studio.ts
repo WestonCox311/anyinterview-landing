@@ -242,9 +242,9 @@ document.getElementById('studioHomeLink')?.addEventListener('click', (e) => {
   returnHome();
 });
 
-// Sidebar "New interview" button
+// Sidebar "New interview" button → opens demo modal (demo context)
 document.getElementById('sidebarNewBtn')?.addEventListener('click', () => {
-  returnHome();
+  (window as any).openDemoModal?.();
 });
 
 // Escape key closes studio

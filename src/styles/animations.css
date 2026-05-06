@@ -1,8 +1,8 @@
 /* Slot word transitions */
 .slot-word {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
+  left: 0;
+  transform: translateY(20px);
   opacity: 0;
   filter: blur(6px);
   white-space: nowrap;
@@ -11,14 +11,28 @@
               filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .slot-word.active {
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
   opacity: 1;
   filter: blur(0);
 }
 .slot-word.exiting {
-  transform: translateX(-50%) translateY(-20px);
+  transform: translateY(-20px);
   opacity: 0;
   filter: blur(6px);
+}
+
+/* Mobile: h1 is centered — center the slot words too */
+@media (max-width: 1040px) {
+  .slot-word {
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+  }
+  .slot-word.active {
+    transform: translateX(-50%) translateY(0);
+  }
+  .slot-word.exiting {
+    transform: translateX(-50%) translateY(-20px);
+  }
 }
 
 /* Keyframes */

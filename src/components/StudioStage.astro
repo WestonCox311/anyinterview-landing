@@ -514,11 +514,15 @@
 
   .msg-body { flex: 1; padding-top: 4px; }
   .msg-author {
+    font-family: 'Inter', sans-serif;
     font-size: 12px; font-weight: 500;
     color: var(--ink-mute); margin-bottom: 6px;
     letter-spacing: 0.02em;
   }
-  .msg-content { font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
+  .msg-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.65; color: var(--ink-soft);
+  }
   .msg-content p { margin-bottom: 10px; }
   .msg-content p:last-child { margin-bottom: 0; }
   .msg-content strong { color: var(--ink); font-weight: 600; }
@@ -678,9 +682,26 @@
     animation: studioFade 0.5s ease forwards;
   }
   .studio-section h3 {
+    font-family: 'Inter', sans-serif;
     font-size: 11px; font-weight: 500;
     letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--ink-mute); margin-bottom: 10px;
+  }
+  .studio-section ol {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: decimal;
+  }
+  .studio-section li {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink-soft);
+    padding-left: 4px;
   }
 
   .studio-meta {

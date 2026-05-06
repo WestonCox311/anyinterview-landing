@@ -93,3 +93,26 @@ body::before {
 
 /* Fix display:flex overriding [hidden] on studio panes */
 .studio-voice[hidden], .studio-settings[hidden] { display: none !important; }
+
+/* ── Studio section content (JS-generated, requires global scope) ── */
+.studio-section h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+.studio-section ol {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px; line-height: 1.65;
+  color: var(--ink-soft);
+  padding-left: 18px;
+  list-style: decimal;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.studio-section li {
+  font-family: 'Inter', sans-serif;
+  color: var(--ink-soft);
+  padding-left: 4px;
+}
