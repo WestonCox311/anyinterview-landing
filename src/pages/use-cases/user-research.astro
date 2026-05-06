@@ -1,0 +1,122 @@
+---
+import InnerLayout from '../../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AI User Research Interviews",
+  "url": "https://anyinterview.to/use-cases/user-research",
+  "description": "Run moderated-style user research interviews without the scheduling overhead. AnyInterview conducts structured usability sessions — transcribed, timestamped, ready for synthesis.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"User Research","item":"https://anyinterview.to/use-cases/user-research"}]},
+  "about": {"@type":"Service","name":"AI User Research Interviews","provider":{"@type":"Organization","name":"AnyInterview","url":"https://anyinterview.to"},"serviceType":"AI-powered moderated user research sessions"}
+};
+---
+<InnerLayout
+  title="AI User Research Interviews — Structured Usability & UX Interviews | AnyInterview"
+  description="Run moderated-style user research interviews without the scheduling overhead. AnyInterview conducts structured usability sessions — transcribed, timestamped, ready for synthesis."
+  schema={schema}
+  canonical="https://anyinterview.to/use-cases/user-research"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">User Research</p>
+      <h1>More sessions. <em>Less scheduling.</em><br/>Same rigor.</h1>
+      <p class="ip-hero-sub">Research velocity is a competitive advantage. AnyInterview runs your structured usability sessions — so you can spend your time synthesizing findings instead of hunting for calendar slots.</p>
+      <div class="ip-cta-row">
+        <a href="#" class="ip-cta-primary" data-action="open-demo">Book a Demo →</a>
+        <a href="/templates" class="ip-cta-secondary">Browse research templates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">The Problem</p>
+      <h2>Your research backlog is <em>longer than your sprint.</em></h2>
+      <p class="ip-section-lead">Research teams spend more time coordinating sessions than running them. The insights that would unblock your product team are waiting on a calendar that's already full.</p>
+      <div class="res-cols">
+        <p>The average moderated session takes 90 minutes to schedule for every 45 minutes of actual research. At 10 sessions per study, that's 15 hours of coordination overhead per research cycle — time that could go into analysis, synthesis, and communication. The research budget goes to logistics, not learning.</p>
+        <p>Sample size is the other constraint. Most usability studies run 5–8 participants — not because that's enough, but because that's what the calendar allows. AnyInterview lets you run 50-session studies with the same effort as a 5-session one. The statistical confidence follows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">How It Works</p>
+      <h2>Your research design. <em>Conducted at scale.</em></h2>
+      <p class="ip-section-lead">Design your study once — tasks, probes, think-aloud prompts. Send links to participants. Get timestamped transcripts ready for affinity mapping.</p>
+      <div class="ip-card-grid--4">
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Moderated-style flows</h3>
+          <p>Task-based flows with branching follow-up probes. When a participant hesitates or deviates, the AI probes deeper — just like a trained moderator would.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 2H3v16h5l3 3 3-3h7V2z"/><path d="M9 9h.01M13 9h.01M17 9h.01"/></svg>
+          </div>
+          <h3>Think-aloud support</h3>
+          <p>Participants are prompted to narrate their thinking throughout tasks. The AI listens for hesitation, confusion, and delight — and asks about it.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          <h3>Timestamped transcripts</h3>
+          <p>Every word, timestamped and speaker-labeled. Export directly into Dovetail, Notion, or your own affinity mapping workflow.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3>Intercept studies &amp; panels</h3>
+          <p>Run intercept studies at any scale, or build longitudinal panels that revisit the same participants across multiple studies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">Research Velocity</p>
+      <h2>What changes when <em>research isn't the bottleneck.</em></h2>
+      <div class="ip-card-grid">
+        <div class="ip-card">
+          <div class="ip-card-icon"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Ship faster with more confidence</h3>
+          <p>Teams that research continuously make fewer expensive reversals. The study that would have taken three weeks happens in three days.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Broader participant pools</h3>
+          <p>No timezone constraints, no scheduling friction. Recruit participants globally and run sessions whenever they're available.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3>Statistically meaningful samples</h3>
+          <p>Run 30-, 50-, or 100-participant studies without proportionally scaling your research headcount.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Run 10× more user sessions <em>this sprint.</em></h2>
+      <p>Design your study in chat. Send the links. Start synthesizing tomorrow.</p>
+      <a href="#" class="ip-cta-primary" data-action="open-demo">Book a Demo →</a>
+      <p class="ip-closing-meta">Free to try <span class="dot"></span> No credit card <span class="dot"></span> Works with Dovetail, Notion, and more</p>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .res-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 8px; }
+  .res-cols p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+  @media (max-width: 720px) { .res-cols { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,123 @@
+---
+import InnerLayout from '../../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AI Legal Intake Interviews",
+  "url": "https://anyinterview.to/use-cases/legal-intake",
+  "description": "Conduct consistent, recorded client intake interviews at scale. AnyInterview runs structured legal intake — fully transcribed, with chain-of-custody documentation.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"Legal Intake","item":"https://anyinterview.to/use-cases/legal-intake"}]},
+  "about": {"@type":"Service","name":"AI Legal Intake Interviews","provider":{"@type":"Organization","name":"AnyInterview","url":"https://anyinterview.to"},"serviceType":"AI-powered legal client intake interviews"}
+};
+---
+<InnerLayout
+  title="AI Legal Intake Interviews — Structured Client Intake for Law Firms | AnyInterview"
+  description="Conduct consistent, recorded client intake interviews at scale. AnyInterview runs structured legal intake — fully transcribed, with chain-of-custody documentation."
+  schema={schema}
+  canonical="https://anyinterview.to/use-cases/legal-intake"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">Legal Intake</p>
+      <h1>Every intake. <em>Every detail.</em><br/>Nothing missed.</h1>
+      <p class="ip-hero-sub">The intake interview is where cases are won or lost before they begin. AnyInterview conducts your structured intake — consistently, completely — with a full transcript and recording from the first word.</p>
+      <div class="ip-cta-row">
+        <a href="#" class="ip-cta-primary" data-action="open-demo">Book a Demo →</a>
+        <a href="/security" class="ip-cta-secondary">Security &amp; chain-of-custody</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">The Problem</p>
+      <h2>Intake gaps become <em>case gaps.</em></h2>
+      <p class="ip-section-lead">A rushed or incomplete intake interview costs more than the time it saves. The questions that weren't asked become the gaps in your case file — discovered too late.</p>
+      <div class="li-cols">
+        <p>High-volume practice areas — personal injury, immigration, estate planning — process dozens of intakes per week. The quality of those intakes depends on who's conducting them, how much time they have, and whether the client remembered to mention the right things. None of those variables should determine the quality of your case record.</p>
+        <p>Client-paced intake also solves a real scheduling problem. A prospective client who can't reach your office during business hours doesn't become a client. AnyInterview lets them complete their intake interview at 10pm from their phone — and gives you a complete record waiting when you open in the morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">Built for Legal Teams</p>
+      <h2>Intake that's <em>complete by design.</em></h2>
+      <p class="ip-section-lead">Configure your intake flow for each practice area. Every question asked, every answer captured — with a full recording and transcript from the first moment.</p>
+      <div class="ip-card-grid--4">
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Practice-area intake flows</h3>
+          <p>Structured flows for personal injury, family law, estate planning, immigration, and more. Every question your intake staff would ask — plus the follow-ups they sometimes miss.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Chain-of-custody documentation</h3>
+          <p>Full recording with timestamped transcript. The complete client statement, documented from the first word, with an immutable chain of custody.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Conflict-check data at intake</h3>
+          <p>Capture opposing parties, related entities, and prior counsel at intake — structured and searchable for conflict checks before the first consultation.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Client-paced, async intake</h3>
+          <p>Clients complete the intake interview when they're ready — evening, weekend, from their phone. No scheduling required. The record is waiting for you in the morning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">Practice Areas</p>
+      <h2>Templates built for <em>real legal work.</em></h2>
+      <div class="ip-card-grid--2">
+        <div class="ip-card">
+          <h3>Personal injury</h3>
+          <p>Incident details, medical timeline, insurance information, prior conditions. Every field an attorney needs before the first consultation.</p>
+        </div>
+        <div class="ip-card">
+          <h3>Family law</h3>
+          <p>Marital history, asset overview, custody concerns, prior proceedings. Structured intake that prepares the client — and the attorney — for a productive first meeting.</p>
+        </div>
+        <div class="ip-card">
+          <h3>Estate planning</h3>
+          <p>Asset inventory, beneficiary preferences, existing documents, healthcare directives. Captured completely before the client sits down with counsel.</p>
+        </div>
+        <div class="ip-card">
+          <h3>Immigration</h3>
+          <p>Country of origin, immigration history, family ties, employment status. Structured intake for the questions that determine case strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Capture every intake <em>completely.</em></h2>
+      <p>Every client statement, fully documented, from the first word. Set up your first intake template in 90 seconds.</p>
+      <a href="#" class="ip-cta-primary" data-action="open-demo">Book a Demo →</a>
+      <p class="ip-closing-meta">Free to try <span class="dot"></span> No credit card <span class="dot"></span> HIPAA-ready data paths available</p>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .li-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 8px; }
+  .li-cols p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+  @media (max-width: 720px) { .li-cols { grid-template-columns: 1fr; } }
+</style>
