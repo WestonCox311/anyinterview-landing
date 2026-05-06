@@ -115,17 +115,14 @@ const { title, description, schema, canonical, ogImage } = Astro.props;
   }
   .ip-cta-secondary:hover { color: var(--accent); }
 
-  .ip-section {
-    padding: clamp(64px, 10vh, 112px) clamp(20px, 5vw, 56px);
-    background: var(--paper);
-  }
-  .ip-section--alt {
-    background: var(--paper-cool);
-  }
+  .ip-section,
+  .ip-section--alt,
   .ip-section--dark {
-    background: var(--ink);
-    color: var(--paper);
+    padding: clamp(64px, 10vh, 112px) clamp(20px, 5vw, 56px);
   }
+  .ip-section { background: var(--paper); }
+  .ip-section--alt { background: var(--paper-cool); }
+  .ip-section--dark { background: var(--ink); color: var(--paper); }
   .ip-section-inner {
     max-width: 1240px;
     margin: 0 auto;
