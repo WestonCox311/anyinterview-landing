@@ -103,7 +103,7 @@ const pathname = Astro.url.pathname;
   }
 
   /* Product + Resources only appear in the mobile hamburger menu */
-  .nav-group--mobile-only { display: none; }
+  .nav-group.nav-group--mobile-only { display: none; }
 
   .nav-group {
     display: flex;
@@ -212,7 +212,7 @@ const pathname = Astro.url.pathname;
     }
 
     /* Restore all groups inside the open hamburger menu */
-    .inner-nav-links.is-open .nav-group--mobile-only {
+    .inner-nav-links.is-open .nav-group.nav-group--mobile-only {
       display: flex;
       flex-direction: column;
     }
