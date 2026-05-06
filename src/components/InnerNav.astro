@@ -9,7 +9,7 @@ const pathname = Astro.url.pathname;
     <nav class="inner-nav-links" id="innerNavLinks">
 
       <div class="nav-group">
-        <span class="nav-group-label">For</span>
+        <span class="nav-group-label">Use Cases</span>
         <div class="nav-group-links">
           <a href="/for/hiring">Hiring</a>
           <a href="/for/customer-discovery">Customer Discovery</a>
@@ -20,7 +20,7 @@ const pathname = Astro.url.pathname;
         </div>
       </div>
 
-      <div class="nav-group">
+      <div class="nav-group nav-group--mobile-only">
         <span class="nav-group-label">Product</span>
         <div class="nav-group-links">
           <a href="/how-it-works">How It Works</a>
@@ -31,7 +31,7 @@ const pathname = Astro.url.pathname;
         </div>
       </div>
 
-      <div class="nav-group">
+      <div class="nav-group nav-group--mobile-only">
         <span class="nav-group-label">Resources</span>
         <div class="nav-group-links">
           <a href="/docs">Docs</a>
@@ -102,6 +102,9 @@ const pathname = Astro.url.pathname;
     overflow: hidden;
   }
 
+  /* Product + Resources only appear in the mobile hamburger menu */
+  .nav-group--mobile-only { display: none; }
+
   .nav-group {
     display: flex;
     flex-direction: column;
@@ -111,7 +114,8 @@ const pathname = Astro.url.pathname;
     justify-content: center;
     gap: 3px;
   }
-  .nav-group:first-child { padding-left: 0; }
+  /* Use Cases is the only desktop group — no divider needed */
+  .nav-group:first-child { padding-left: 0; border-right: none; }
   .nav-group:last-child { border-right: none; }
 
   .nav-group-label {
@@ -205,6 +209,12 @@ const pathname = Astro.url.pathname;
       padding: 20px clamp(20px, 5vw, 56px) 24px;
       gap: 20px;
       align-items: flex-start;
+    }
+
+    /* Restore all groups inside the open hamburger menu */
+    .inner-nav-links.is-open .nav-group--mobile-only {
+      display: flex;
+      flex-direction: column;
     }
 
     .nav-group {
