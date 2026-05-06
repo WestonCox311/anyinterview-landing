@@ -1,5 +1,5 @@
 import { escapeHtml } from './escape-html.ts';
-import { getTemplate } from './canned-responses.ts';
+import { getTemplate, getParticipants, type Participant } from './canned-responses.ts';
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -7,6 +7,7 @@ const heroStage = document.getElementById('hero-stage')!;
 const studioStage = document.getElementById('studio-stage')!;
 const messages = document.getElementById('messages')!;
 const studioScroll = document.getElementById('studioScroll')!;
+const studioParticipants = document.getElementById('studioParticipants')!;
 const composerInput = document.getElementById('composerInput') as HTMLTextAreaElement;
 const heroInput = document.getElementById('heroInput') as HTMLTextAreaElement;
 const heroForm = document.getElementById('heroForm') as HTMLFormElement;
@@ -77,6 +78,40 @@ function streamText(el: HTMLElement, html: string, onDone?: () => void): void {
   tick();
 }
 
+const availColors: Record<string, string> = {
+  green: 'var(--accent)',
+  amber: 'var(--ink-mute)',
+  muted: 'var(--ink-faint)',
+};
+
+function populateParticipants(prompt: string): void {
+  const list = getParticipants(prompt);
+  studioParticipants.innerHTML = `
+    <div class="sp-header">
+      <span class="sp-count">${list.length} matched participants</span>
+      <a href="#" class="sp-browse" data-action="open-demo">Browse all →</a>
+    </div>
+    ${list.map((p: Participant, i: number) => `
+      <div class="sp-row" style="${!reducedMotion ? `opacity:0;transform:translateY(6px);animation:studioFade 0.4s ease forwards;animation-delay:${i * 0.1}s` : ''}">
+        <div class="sp-avatar">${escapeHtml(p.initials)}</div>
+        <div class="sp-info">
+          <div class="sp-name">${escapeHtml(p.name)}</div>
+          <div class="sp-detail">${escapeHtml(p.detail)}</div>
+          <div class="sp-tags">${p.tags.map(t => `<span class="sp-tag">${escapeHtml(t)}</span>`).join('')}</div>
+        </div>
+        <div class="sp-right">
+          <span class="sp-avail" style="color:${availColors[p.availColor] ?? 'var(--ink-mute)'}">${escapeHtml(p.availability)}</span>
+          <button class="sp-invite" data-action="open-demo">Invite →</button>
+        </div>
+      </div>
+    `).join('')}
+    <div class="sp-footer">Source from our network of 12,000+ vetted participants</div>
+  `;
+  studioParticipants.querySelectorAll<HTMLElement>('[data-action="open-demo"]').forEach(el => {
+    el.addEventListener('click', (e) => { e.preventDefault(); (window as any).openDemoModal?.(); });
+  });
+}
+
 function populateStudio(prompt: string): void {
   const data = getTemplate(prompt);
   if (studioTitle) studioTitle.textContent = data.title;
@@ -123,7 +158,10 @@ export function launchStudio(value: string): void {
       streamText(aiContent, getAIResponse(value));
     }, 600);
 
-    setTimeout(() => populateStudio(value), 1800);
+    setTimeout(() => {
+      populateStudio(value);
+      populateParticipants(value);
+    }, 1800);
 
     setTimeout(() => composerInput?.focus(), 200);
   }, 600);
@@ -138,6 +176,12 @@ export function returnHome(): void {
     window.scrollTo({ top: 0, behavior: 'instant' });
     messages.innerHTML = '';
     studioScroll.innerHTML = '';
+    studioParticipants.innerHTML = '';
+    // Reset to Structure tab
+    document.querySelectorAll('.studio-tab').forEach(t => t.classList.remove('active'));
+    document.querySelector<HTMLElement>('.studio-tab[data-pane="structure"]')?.classList.add('active');
+    studioScroll.hidden = false;
+    studioParticipants.hidden = true;
     if (heroInput) heroInput.focus();
   }, 400);
 }
@@ -211,11 +255,14 @@ document.querySelectorAll<HTMLElement>('.folder-header').forEach(header => {
   });
 });
 
-// Studio tabs
+// Studio pane tabs
 document.querySelectorAll<HTMLElement>('.studio-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.studio-tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
+    const pane = tab.dataset.pane;
+    studioScroll.hidden = pane !== 'structure';
+    studioParticipants.hidden = pane !== 'participants';
   });
 });
 

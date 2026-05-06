@@ -1,0 +1,700 @@
+---
+---
+<section class="leads-section">
+  <div class="leads-inner">
+
+    <div class="leads-header">
+      <span class="leads-eyebrow">Participant sourcing</span>
+      <h2 class="leads-title">No contacts? <em>We'll find them.</em></h2>
+      <p class="leads-sub">
+        AnyInterview connects you with pre-qualified participants across every interview type —
+        vetted, available, and matched to your exact use case. Send a link directly from the studio.
+      </p>
+    </div>
+
+    <div class="leads-tabs" role="tablist" aria-label="Interview verticals">
+      <button class="leads-tab active" data-vertical="hiring" role="tab" aria-selected="true">Hiring</button>
+      <button class="leads-tab" data-vertical="discovery" role="tab" aria-selected="false">Customer discovery</button>
+      <button class="leads-tab" data-vertical="research" role="tab" aria-selected="false">User research</button>
+      <button class="leads-tab" data-vertical="legal" role="tab" aria-selected="false">Legal</button>
+    </div>
+
+    <div class="db-card">
+      <div class="db-toolbar">
+        <div class="db-toolbar-left">
+          <span class="db-record-count" id="dbCount">847 participants</span>
+          <span class="db-filter-tag" id="dbFilterTag">Backend · 5–12 yrs exp · Open to roles</span>
+        </div>
+        <div class="db-toolbar-right">
+          <div class="db-search" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <span>Search participants…</span>
+          </div>
+          <button class="db-filter-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+            Filters
+          </button>
+        </div>
+      </div>
+
+      <div class="db-table" id="dbTable">
+        <div class="db-thead" id="dbHead">
+          <!-- populated by JS -->
+        </div>
+        <div class="db-tbody" id="dbBody">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <div class="db-footer">
+        <span class="db-footer-note">Showing 5 of <span id="dbTotal">847</span> matches</span>
+        <a href="#" class="db-footer-link" data-action="open-demo">Request full access →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const verticals: Record<string, {
+  count: string;
+  filter: string;
+  total: string;
+  cols: string[];
+  rows: (string | { text: string; chip?: string; mono?: boolean })[][];
+}> = {
+  hiring: {
+    count: '847 participants',
+    filter: 'Backend · 5–12 yrs exp · Open to roles',
+    total: '847',
+    cols: ['Name', 'Company', 'Experience', 'Skills', 'Location', 'Status', ''],
+    rows: [
+      [
+        { text: 'Priya N.', chip: 'PS' },
+        'Staff SWE · Stripe',
+        '8 yrs',
+        { text: 'Go · Postgres · k8s', mono: true },
+        'SF Bay Area',
+        { text: 'Passively open', chip: 'passive' },
+        'invite',
+      ],
+      [
+        { text: 'Marcus W.', chip: 'MW' },
+        'Principal Eng · Vercel',
+        '11 yrs',
+        { text: 'TypeScript · Rust · Edge', mono: true },
+        'Remote (EU)',
+        { text: 'Actively looking', chip: 'active' },
+        'invite',
+      ],
+      [
+        { text: 'Dayo A.', chip: 'DA' },
+        'Senior SWE · Cloudflare',
+        '6 yrs',
+        { text: 'Rust · eBPF · Networking', mono: true },
+        'Austin, TX',
+        { text: 'Exploring', chip: 'passive' },
+        'invite',
+      ],
+      [
+        { text: 'Sofia R.', chip: 'SR' },
+        'Backend Lead · Plaid',
+        '7 yrs',
+        { text: 'Python · Go · Fintech APIs', mono: true },
+        'New York, NY',
+        { text: 'Open to roles', chip: 'active' },
+        'invite',
+      ],
+      [
+        { text: 'Kenji T.', chip: 'KT' },
+        'Senior SWE · Figma',
+        '5 yrs',
+        { text: 'TypeScript · Postgres · Infra', mono: true },
+        'Seattle, WA',
+        { text: 'Not looking', chip: 'closed' },
+        'invite',
+      ],
+    ],
+  },
+  discovery: {
+    count: '1,204 participants',
+    filter: 'B2B SaaS · Founder or C-suite · Seed–Series B',
+    total: '1,204',
+    cols: ['Name', 'Company', 'Stage', 'Domain', 'Team', 'Availability', ''],
+    rows: [
+      [
+        { text: 'Tom H.', chip: 'TH' },
+        'Co-founder · Flowboard',
+        { text: 'Pre-seed', chip: 'preseed' },
+        'PM tooling, B2B',
+        '4 people',
+        { text: 'This week', chip: 'active' },
+        'invite',
+      ],
+      [
+        { text: 'Aisha O.', chip: 'AO' },
+        'CEO · Draftly',
+        { text: 'Seed', chip: 'seed' },
+        'AI writing, B2B SaaS',
+        '11 people',
+        { text: 'Next week', chip: 'passive' },
+        'invite',
+      ],
+      [
+        { text: 'Mei L.', chip: 'ML' },
+        'Founder · Cadence',
+        { text: 'Series A', chip: 'seriesa' },
+        'RevOps, Sales tech',
+        '28 people',
+        { text: 'Limited', chip: 'closed' },
+        'invite',
+      ],
+      [
+        { text: 'Ravi S.', chip: 'RS' },
+        'CTO · Loopback',
+        { text: 'Pre-seed', chip: 'preseed' },
+        'Data pipelines, DevTools',
+        '3 people',
+        { text: 'Available', chip: 'active' },
+        'invite',
+      ],
+      [
+        { text: 'Carmen J.', chip: 'CJ' },
+        'Co-founder · Helio',
+        { text: 'Seed', chip: 'seed' },
+        'FinTech, compliance',
+        '8 people',
+        { text: 'This week', chip: 'active' },
+        'invite',
+      ],
+    ],
+  },
+  research: {
+    count: '3,180 participants',
+    filter: 'Online shoppers · 18–54 · US-based · Screened < 60 days',
+    total: '3,180',
+    cols: ['Name', 'Profile', 'Freq.', 'Device', 'Last screened', 'Availability', ''],
+    rows: [
+      [
+        { text: 'Dana M.', chip: 'DM' },
+        'Frequent shopper · BNPL user',
+        '4× /mo',
+        'iPhone',
+        { text: 'Apr 2026', mono: true },
+        { text: 'Available', chip: 'active' },
+        'invite',
+      ],
+      [
+        { text: 'Ricardo S.', chip: 'RS' },
+        'Freelance designer · price-compares',
+        '7× /mo',
+        'Android',
+        { text: 'Mar 2026', mono: true },
+        { text: 'Weekends', chip: 'passive' },
+        'invite',
+      ],
+      [
+        { text: 'Yuki N.', chip: 'YN' },
+        'Small biz owner · bulk orders',
+        '8× /mo',
+        'Desktop',
+        { text: 'Apr 2026', mono: true },
+        { text: 'Mornings', chip: 'passive' },
+        'invite',
+      ],
+      [
+        { text: 'Leila A.', chip: 'LA' },
+        'Parent, household manager',
+        '3× /mo',
+        'iPhone',
+        { text: 'Feb 2026', mono: true },
+        { text: 'Limited', chip: 'closed' },
+        'invite',
+      ],
+      [
+        { text: 'James O.', chip: 'JO' },
+        'Remote worker · multi-device',
+        '5× /mo',
+        'Desktop + mobile',
+        { text: 'Apr 2026', mono: true },
+        { text: 'Available', chip: 'active' },
+        'invite',
+      ],
+    ],
+  },
+  legal: {
+    count: '412 participants',
+    filter: 'Expert witnesses · Licensed · Personal injury, PI',
+    total: '412',
+    cols: ['Name', 'Specialty', 'Credentials', 'Jurisdictions', 'Cases', 'Lead time', ''],
+    rows: [
+      [
+        { text: 'Dr. Marcus B.', chip: 'MB' },
+        'Orthopedic Surgery',
+        'Board-certified MD',
+        'CA, NV, AZ',
+        { text: '120+ deps', mono: true },
+        { text: '2 wk notice', chip: 'passive' },
+        'invite',
+      ],
+      [
+        { text: 'Linda C., MD', chip: 'LC' },
+        'Emergency Medicine',
+        'ABEM Board-certified',
+        'NY, NJ, CT, PA',
+        { text: '85+ cases', mono: true },
+        { text: '1 wk notice', chip: 'active' },
+        'invite',
+      ],
+      [
+        { text: 'Gregory T., PE', chip: 'GT' },
+        'Accident Reconstruction',
+        'ACTAR certified',
+        'TX, OK, LA, AR',
+        { text: '200+ cases', mono: true },
+        { text: 'Available now', chip: 'active' },
+        'invite',
+      ],
+      [
+        { text: 'Priya S., MD', chip: 'PS' },
+        'Neurology · TBI / Spine',
+        'Board-certified MD',
+        'FL, GA, SC, NC',
+        { text: '60+ cases', mono: true },
+        { text: 'Limited', chip: 'closed' },
+        'invite',
+      ],
+      [
+        { text: 'David M., CPA', chip: 'DM' },
+        'Forensic Accounting',
+        'CFE, CPA',
+        'IL, IN, OH, MI',
+        { text: '150+ cases', mono: true },
+        { text: '3 wk notice', chip: 'passive' },
+        'invite',
+      ],
+    ],
+  },
+};
+
+const chipColors: Record<string, string> = {
+  active: '#1d3557',
+  passive: '#5b6478',
+  closed: '#9ba3b3',
+  preseed: '#5b6478',
+  seed: '#2a4a7c',
+  seriesa: '#1d3557',
+};
+
+const avatarColors = [
+  '#d8e0ec','#ede8da','#ecf0f6','#f9f6ee','#d6cfbf'
+];
+
+function initials(name: string): string {
+  return name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+}
+
+function renderChip(text: string, type: string): string {
+  const color = chipColors[type] ?? '#5b6478';
+  return `<span class="db-chip" style="color:${color};border-color:${color}22;background:${color}0d">${text}</span>`;
+}
+
+function renderCell(cell: string | { text: string; chip?: string; mono?: boolean }, idx: number, colIdx: number): string {
+  if (typeof cell === 'string') {
+    if (cell === 'invite') {
+      return `<div class="db-cell db-cell-action"><button class="db-invite-btn" data-action="open-demo">Invite →</button></div>`;
+    }
+    return `<div class="db-cell">${cell}</div>`;
+  }
+
+  if (colIdx === 0) {
+    const color = avatarColors[idx % avatarColors.length];
+    const init = initials(cell.text);
+    return `<div class="db-cell db-cell-name">
+      <span class="db-avatar" style="background:${color}">${init}</span>
+      <span>${cell.text}</span>
+    </div>`;
+  }
+
+  if (cell.chip) {
+    return `<div class="db-cell">${renderChip(cell.text, cell.chip)}</div>`;
+  }
+
+  if (cell.mono) {
+    return `<div class="db-cell"><span class="db-mono">${cell.text}</span></div>`;
+  }
+
+  return `<div class="db-cell">${cell.text}</div>`;
+}
+
+function renderVertical(key: string): void {
+  const data = verticals[key];
+  if (!data) return;
+
+  const countEl = document.getElementById('dbCount');
+  const filterEl = document.getElementById('dbFilterTag');
+  const totalEl = document.getElementById('dbTotal');
+  const headEl = document.getElementById('dbHead');
+  const bodyEl = document.getElementById('dbBody');
+
+  if (countEl) countEl.textContent = data.count;
+  if (filterEl) filterEl.textContent = data.filter;
+  if (totalEl) totalEl.textContent = data.total;
+
+  if (headEl) {
+    headEl.innerHTML = data.cols.map(col =>
+      `<div class="db-th">${col}</div>`
+    ).join('');
+  }
+
+  if (bodyEl) {
+    bodyEl.innerHTML = data.rows.map((row, idx) =>
+      `<div class="db-row">${row.map((cell, colIdx) => renderCell(cell, idx, colIdx)).join('')}</div>`
+    ).join('');
+
+    // Wire invite buttons
+    bodyEl.querySelectorAll<HTMLButtonElement>('[data-action="open-demo"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        (window as any).openDemoModal?.();
+      });
+    });
+  }
+}
+
+// Init
+renderVertical('hiring');
+
+document.querySelectorAll<HTMLElement>('.leads-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.leads-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    renderVertical(tab.dataset.vertical ?? 'hiring');
+  });
+});
+</script>
+
+<style>
+  .leads-section {
+    position: relative;
+    z-index: 2;
+    padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 56px);
+    background: var(--paper-warm);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .leads-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .leads-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto clamp(40px, 6vh, 72px);
+  }
+
+  .leads-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 22px;
+  }
+  .leads-eyebrow::before, .leads-eyebrow::after {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .leads-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4.8vw, 60px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .leads-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .leads-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  /* Vertical tabs */
+  .leads-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .leads-tab {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-mute);
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: 7px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+  .leads-tab:hover {
+    color: var(--ink);
+    border-color: var(--ink-soft);
+    background: var(--white);
+  }
+  .leads-tab.active {
+    color: var(--white);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* Database card */
+  .db-card {
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+
+  .db-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--rule);
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .db-toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .db-record-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .db-filter-tag {
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    background: var(--accent-faint);
+    border: 1px solid var(--accent-soft);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .db-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .db-search {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--ink-faint);
+    background: var(--field-bg);
+    border: 1px solid var(--rule);
+    padding: 6px 12px;
+    border-radius: 8px;
+    min-width: 180px;
+    pointer-events: none;
+    user-select: none;
+  }
+  .db-search svg {
+    width: 13px;
+    height: 13px;
+    stroke: var(--ink-faint);
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+
+  .db-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: 6px 12px;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+  .db-filter-btn svg {
+    width: 13px;
+    height: 13px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* Table */
+  .db-table {
+    overflow-x: auto;
+  }
+
+  .db-thead {
+    display: grid;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-warm);
+  }
+
+  .db-th {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 10px 8px;
+  }
+
+  .db-tbody {
+    /* rows */
+  }
+
+  .db-row {
+    display: grid;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.15s ease;
+  }
+  .db-row:last-child { border-bottom: none; }
+  .db-row:hover { background: var(--accent-faint); }
+
+  .db-cell {
+    padding: 13px 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .db-cell-name {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .db-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    flex-shrink: 0;
+  }
+
+  .db-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-mute);
+  }
+
+  .db-chip {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 100px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+
+  .db-cell-action {
+    justify-content: flex-end;
+  }
+
+  .db-invite-btn {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-faint);
+    border: 1px solid var(--accent-soft);
+    padding: 5px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+  }
+  .db-invite-btn:hover {
+    background: var(--accent-soft);
+    transform: translateY(-1px);
+  }
+
+  /* Table grid — 7 cols with action col narrow */
+  .db-thead, .db-row {
+    grid-template-columns: 1.4fr 1.6fr 1fr 1.4fr 1fr 1fr 90px;
+    min-width: 760px;
+  }
+
+  /* Footer */
+  .db-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-top: 1px solid var(--rule);
+    background: var(--paper-warm);
+  }
+
+  .db-footer-note {
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  .db-footer-link {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .db-footer-link:hover { color: var(--accent-bright); text-decoration: underline; }
+
+  @media (max-width: 720px) {
+    .db-search { display: none; }
+    .db-filter-btn { display: none; }
+    .db-filter-tag { display: none; }
+  }
+</style>

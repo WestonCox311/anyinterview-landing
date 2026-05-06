@@ -41,3 +41,36 @@ body::before {
   pointer-events: none;
 }
 #hero-stage.gone { display: none; }
+
+/* ── Dynamically-rendered studio participant rows (JS-created, no Astro scope attr) ── */
+.sp-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.sp-count { font-size: 11.5px; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; }
+.sp-browse { font-size: 11.5px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.sp-browse:hover { text-decoration: underline; }
+.sp-row { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.sp-row:last-of-type { border-bottom: none; }
+.sp-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--accent); flex-shrink: 0; }
+.sp-info { flex: 1; min-width: 0; }
+.sp-name { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.sp-detail { font-size: 11.5px; color: var(--ink-mute); margin-bottom: 6px; }
+.sp-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.sp-tag { font-size: 10.5px; font-family: 'JetBrains Mono', monospace; color: var(--ink-mute); background: var(--paper-warm); border: 1px solid var(--rule); padding: 2px 7px; border-radius: 4px; }
+.sp-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.sp-avail { font-size: 11px; font-weight: 500; white-space: nowrap; }
+.sp-invite { font-size: 11.5px; font-weight: 500; color: var(--accent); background: var(--accent-faint); border: 1px solid var(--accent-soft); padding: 4px 10px; border-radius: 100px; cursor: pointer; transition: all 0.15s ease; white-space: nowrap; }
+.sp-invite:hover { background: var(--accent-soft); }
+.sp-footer { margin-top: 14px; font-size: 11px; color: var(--ink-faint); text-align: center; font-style: italic; padding-top: 12px; border-top: 1px solid var(--rule); }
+
+/* ── Dynamically-rendered DB table rows in ParticipantLeads (JS-created) ── */
+.db-th { font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); padding: 10px 8px; }
+.db-row { display: grid; padding: 0 20px; border-bottom: 1px solid var(--rule); transition: background 0.15s ease; grid-template-columns: 1.4fr 1.6fr 1fr 1.4fr 1fr 1fr 90px; min-width: 760px; }
+.db-row:last-child { border-bottom: none; }
+.db-row:hover { background: var(--accent-faint); }
+.db-cell { padding: 13px 8px; font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; overflow: hidden; }
+.db-cell-name { display: flex; align-items: center; gap: 9px; font-weight: 500; color: var(--ink); white-space: nowrap; }
+.db-avatar { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 600; color: var(--ink-soft); flex-shrink: 0; }
+.db-mono { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-mute); }
+.db-chip { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 100px; border: 1px solid; white-space: nowrap; }
+.db-cell-action { justify-content: flex-end; }
+.db-invite-btn { font-size: 12px; font-weight: 500; color: var(--accent); background: var(--accent-faint); border: 1px solid var(--accent-soft); padding: 5px 12px; border-radius: 100px; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
+.db-invite-btn:hover { background: var(--accent-soft); transform: translateY(-1px); }
