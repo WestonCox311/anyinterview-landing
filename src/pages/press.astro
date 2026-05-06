@@ -1,0 +1,92 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://anyinterview.to/press",
+      "url": "https://anyinterview.to/press",
+      "name": "Press — AnyInterview Media Kit",
+      "description": "Press kit, company boilerplate, key facts, and media contact for journalists and researchers covering AnyInterview."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},
+        {"@type":"ListItem","position":2,"name":"Press","item":"https://anyinterview.to/press"}
+      ]
+    }
+  ]
+};
+---
+<InnerLayout title="Press — AnyInterview Media Kit" description="Press kit, company boilerplate, key facts, and media contact for journalists and researchers covering AnyInterview." schema={schema}>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <span class="ip-eyebrow">Press</span>
+      <h1>AnyInterview in <em>the press.</em></h1>
+      <p class="ip-hero-sub">We make ourselves available to journalists covering AI, the future of work, and recruiting technology. Everything you need is below.</p>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+        <h2>Company boilerplate</h2>
+        <p><strong>Long version:</strong> AnyInterview is an AI interview platform that enables organizations to conduct structured interviews at any scale — without requiring a human interviewer to be in the room. Built for hiring, customer discovery, user research, legal intake, audit compliance, and HR programs, AnyInterview configures structured conversations in chat, delivers them to participants as a private link, and returns a full transcript, recording, and AI-generated summary. Founded in 2025.</p>
+        <p><strong>One sentence:</strong> AnyInterview conducts any structured interview without requiring a human to be in the room.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner">
+      <span class="ip-section-label">Key Facts</span>
+      <h2>At a <em>glance.</em></h2>
+      <div class="ip-card-grid ip-card-grid--2">
+
+        <div class="ip-card">
+          <h3>Founded</h3>
+          <p>2025. Built by a team with backgrounds in recruiting, AI research, and enterprise software.</p>
+        </div>
+
+        <div class="ip-card">
+          <h3>Category</h3>
+          <p>AI interview infrastructure. Sits at the intersection of conversational AI, HR tech, and research tooling.</p>
+        </div>
+
+        <div class="ip-card">
+          <h3>Use cases</h3>
+          <p>Six primary verticals: hiring, customer discovery, user research, audit &amp; compliance, legal intake, and HR &amp; people programs.</p>
+        </div>
+
+        <div class="ip-card">
+          <h3>Tagline</h3>
+          <p>"Conduct any structured interview without being in the room."</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+        <h2>Media assets</h2>
+        <p>Logos (SVG and PNG, light and dark), screenshots, and product visuals are available on request. Email <a href="mailto:press@anyinterview.to">press@anyinterview.to</a> and we'll send a Dropbox link within one business day.</p>
+        <h2>Press contact</h2>
+        <p><a href="mailto:press@anyinterview.to">press@anyinterview.to</a> · We respond to press inquiries within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>We're <em>happy to talk.</em></h2>
+      <p>Interviews, background, data, demos — reach out and we'll make it work.</p>
+      <a href="mailto:press@anyinterview.to" class="ip-cta-primary">Email press →</a>
+    </div>
+  </section>
+
+</InnerLayout>

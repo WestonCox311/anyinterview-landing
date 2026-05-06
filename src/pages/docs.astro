@@ -1,0 +1,184 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://anyinterview.to/docs",
+      "url": "https://anyinterview.to/docs",
+      "name": "Documentation — AnyInterview",
+      "description": "AnyInterview documentation: quickstart guides, API reference, webhook events, and integration docs."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},
+        {"@type":"ListItem","position":2,"name":"Documentation","item":"https://anyinterview.to/docs"}
+      ]
+    }
+  ]
+};
+---
+<InnerLayout title="Documentation — AnyInterview" description="AnyInterview documentation: quickstart guides, API reference, webhook events, and integration docs." schema={schema}>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <span class="ip-eyebrow">Documentation</span>
+      <h1>Get up and running <em>in minutes.</em></h1>
+      <p class="ip-hero-sub">Everything you need to build on AnyInterview — from your first interview to production-scale pipelines.</p>
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner">
+      <span class="ip-section-label">Categories</span>
+      <h2>Where to <em>start.</em></h2>
+      <div class="ip-card-grid ip-card-grid--2">
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+            </svg>
+          </div>
+          <h3>Getting Started</h3>
+          <p>Create your first interview, send a link, and get your first transcript. Takes about 5 minutes.</p>
+          <a href="#getting-started" class="docs-link">Start here →</a>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3>API Reference</h3>
+          <p>Full REST API docs: authentication, endpoints, request/response shapes, error codes.</p>
+          <a href="/api" class="docs-link">API docs →</a>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3>Webhooks</h3>
+          <p>Event types, payload shapes, retry logic, and delivery receipts.</p>
+          <a href="/api#webhooks" class="docs-link">Webhook docs →</a>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Integrations</h3>
+          <p>Connecting AnyInterview to your ATS, CRM, Slack, and other tools.</p>
+          <a href="/integrations" class="docs-link">Integrations →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section" id="getting-started">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+        <h2>Quick start</h2>
+        <p>Step 1: Create an account at anyinterview.to. Step 2: Describe your interview in chat or pick a template. Step 3: Send the link to your participant. Step 4: Read your transcript.</p>
+      </div>
+
+      <div class="code-block">
+        <div class="code-block-header">
+          <span class="code-block-label">API · Create an interview</span>
+        </div>
+        <pre class="code-block-body"><code><span class="code-comment"># Create an interview via API</span>
+POST https://api.anyinterview.to/v1/interviews
+Authorization: Bearer sk_live_...
+
+&#123; "template_id": "tmpl_hire_backend", "candidate_email": "alex@example.com" &#125;</code></pre>
+      </div>
+
+      <div class="ip-prose" style="margin-top:40px;">
+        <h2>Popular guides</h2>
+        <ul>
+          <li>How to set up your first interview</li>
+          <li>How to customize a template</li>
+          <li>How to read a transcript</li>
+          <li>How to configure webhook delivery</li>
+          <li>How to export interview data</li>
+          <li>How to manage team access</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Something missing? <em>Tell us.</em></h2>
+      <p>Documentation is a product. Email docs@anyinterview.to with what you couldn't find.</p>
+      <a href="mailto:support@anyinterview.to" class="ip-cta-primary">Contact support →</a>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .docs-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .docs-link:hover {
+    text-decoration: underline;
+  }
+
+  .code-block {
+    margin-top: 32px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #1e2d42;
+  }
+
+  .code-block-header {
+    background: #0f1b2d;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #1e2d42;
+  }
+
+  .code-block-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7a8fa8;
+    letter-spacing: 0.04em;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .code-block-body {
+    background: #0a1628;
+    margin: 0;
+    padding: 24px 24px;
+    overflow-x: auto;
+  }
+
+  .code-block-body code {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #c9d8ee;
+    white-space: pre;
+  }
+
+  .code-comment {
+    color: #5b7a9e;
+  }
+</style>

@@ -1,0 +1,188 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://anyinterview.to/careers",
+      "url": "https://anyinterview.to/careers",
+      "name": "Careers — AnyInterview",
+      "description": "Join the AnyInterview team. We're hiring for engineering, AI research, and growth roles at an early-stage AI interview company."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},
+        {"@type":"ListItem","position":2,"name":"Careers","item":"https://anyinterview.to/careers"}
+      ]
+    }
+  ]
+};
+---
+<InnerLayout title="Careers — AnyInterview" description="Join the AnyInterview team. We're hiring for engineering, AI research, and growth roles at an early-stage AI interview company." schema={schema}>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <span class="ip-eyebrow">Careers</span>
+      <h1>Build the tool that <em>runs the interview.</em></h1>
+      <p class="ip-hero-sub">We're a small team making something that matters. If you want to work on a hard problem — in AI, infrastructure, or go-to-market — we'd like to talk.</p>
+      <div class="ip-cta-row">
+        <a href="#open-roles" class="ip-cta-primary">See open roles →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner">
+      <span class="ip-section-label">What we value</span>
+      <h2>How we <em>work.</em></h2>
+      <div class="ip-card-grid ip-card-grid--2">
+
+        <div class="ip-card">
+          <h3>Craft over coverage</h3>
+          <p>We'd rather have one thing that works beautifully than ten that work passably. We have opinions about quality and we act on them.</p>
+        </div>
+
+        <div class="ip-card">
+          <h3>Curiosity that runs deep</h3>
+          <p>The people who do the best work here are genuinely curious about the problem. Not just the solution.</p>
+        </div>
+
+        <div class="ip-card">
+          <h3>Directness without armor</h3>
+          <p>We say what we think. We don't mistake niceness for kindness. Disagreement is how we get to better.</p>
+        </div>
+
+        <div class="ip-card">
+          <h3>Ownership, not tasks</h3>
+          <p>Every person on this team owns something real. There are no passengers.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section" id="open-roles">
+    <div class="ip-section-inner">
+      <span class="ip-section-label">Open Roles</span>
+      <h2>Current <em>openings.</em></h2>
+      <div class="roles-list">
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">Senior Full-Stack Engineer</h3>
+            <span class="role-badge">Full-time, remote-first</span>
+          </div>
+          <p class="role-desc">You'll own the interview engine — voice AI, real-time streaming, and the web app customers build interviews in. TypeScript, React, Node.</p>
+          <a href="mailto:careers@anyinterview.to?subject=Senior Full-Stack Engineer" class="role-apply">Apply for this role →</a>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">AI Research Engineer</h3>
+            <span class="role-badge">Full-time, remote-first</span>
+          </div>
+          <p class="role-desc">You'll work on the models that power interview conversations — follow-up generation, transcript analysis, scoring rubrics.</p>
+          <a href="mailto:careers@anyinterview.to?subject=AI Research Engineer" class="role-apply">Apply for this role →</a>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <h3 class="role-title">Head of Growth</h3>
+            <span class="role-badge">Full-time, remote-first</span>
+          </div>
+          <p class="role-desc">You'll own how AnyInterview grows — from first ad to first enterprise contract. SEO, content, partnerships, and product-led growth.</p>
+          <a href="mailto:careers@anyinterview.to?subject=Head of Growth" class="role-apply">Apply for this role →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+        <h2>Life at AnyInterview</h2>
+        <ul>
+          <li>Fully remote — work from anywhere</li>
+          <li>Competitive salary + meaningful equity</li>
+          <li>Direct access to founders — no layers</li>
+          <li>Budget for your setup and learning</li>
+          <li>Health, dental, vision (US employees)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Don't see your role? <em>Write to us anyway.</em></h2>
+      <p>We hire for the person as much as the role. If you think you belong here, make the case.</p>
+      <a href="mailto:careers@anyinterview.to" class="ip-cta-primary">Send a note →</a>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .role-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 32px 36px;
+  }
+
+  .role-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .role-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .role-badge {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .role-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 20px 0;
+  }
+
+  .role-apply {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .role-apply:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://anyinterview.to/trust",
+      "url": "https://anyinterview.to/trust",
+      "name": "Trust Center — AnyInterview",
+      "description": "AnyInterview's Trust Center: privacy policy, terms, DPA, subprocessor list, compliance posture, and AI transparency."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},
+        {"@type":"ListItem","position":2,"name":"Trust Center","item":"https://anyinterview.to/trust"}
+      ]
+    }
+  ]
+};
+---
+<InnerLayout title="Trust Center — AnyInterview" description="AnyInterview's Trust Center: privacy policy, terms, DPA, subprocessor list, compliance posture, and AI transparency." schema={schema}>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <span class="ip-eyebrow">Trust Center</span>
+      <h1>Everything you need <em>to trust us.</em></h1>
+      <p class="ip-hero-sub">We document what we do, publish our subprocessors, and keep our policies readable. Accountability shouldn't require a legal team to decode.</p>
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner">
+      <span class="ip-section-label">Documents</span>
+      <h2>Our <em>policies.</em></h2>
+      <div class="ip-card-grid ip-card-grid--2">
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3><a href="/privacy">Privacy Policy</a></h3>
+          <p>How we collect, use, and protect data — written to be readable.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3><a href="/terms">Terms of Service</a></h3>
+          <p>The rules for using AnyInterview, in plain English.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3><a href="/dpa">Data Processing Agreement</a></h3>
+          <p>GDPR-compliant DPA. Request a countersigned copy by email.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+          </div>
+          <h3><a href="/subprocessors">Subprocessor List</a></h3>
+          <p>Every third party we use to deliver the service, with purpose and data processed.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3><a href="/security">Security Overview</a></h3>
+          <p>Encryption, access controls, compliance posture, and responsible disclosure.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+        <h2>Compliance status</h2>
+        <ul>
+          <li>GDPR — Compliant by default</li>
+          <li>SOC 2 Type II — In progress (Q3 2026)</li>
+          <li>HIPAA — Ready paths available</li>
+          <li>CCPA — Compliant</li>
+          <li>BIPA — Proctoring features are BIPA-aware</li>
+        </ul>
+
+        <h2>AI transparency</h2>
+        <p>AnyInterview uses large language models and speech models to conduct interviews and generate transcripts. We do not use your interview data to train third-party AI models. AI model providers are listed in our subprocessor list.</p>
+        <p>Every interview participant receives an AI-disclosure notice before their session begins. Consent is required and timestamped.</p>
+
+        <h2>Data requests</h2>
+        <p>To exercise your data rights under GDPR or CCPA — access, deletion, portability — email <a href="mailto:privacy@anyinterview.to">privacy@anyinterview.to</a>. We respond within 30 days.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Something not answered <em>here?</em></h2>
+      <p>Reach out. We document based on what people ask.</p>
+      <button class="ip-cta-primary" data-action="open-demo">Contact us →</button>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .ip-prose a,
+  .ip-card h3 a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .ip-card h3 a:hover,
+  .ip-prose a:hover {
+    text-decoration: underline;
+  }
+</style>

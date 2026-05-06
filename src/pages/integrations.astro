@@ -1,0 +1,147 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Integrations — AnyInterview",
+  "url": "https://anyinterview.to/integrations",
+  "description": "Connect AnyInterview to your ATS, CRM, Notion, Slack, and more. Webhooks and REST API for custom pipelines.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"Integrations","item":"https://anyinterview.to/integrations"}]}
+};
+
+const integrations = {
+  "ATS & Recruiting": [
+    {name:"Greenhouse",desc:"Push transcripts and scores directly to candidate profiles."},
+    {name:"Lever",desc:"Sync interview outcomes and notes to Lever opportunities."},
+    {name:"Ashby",desc:"Native two-way sync with Ashby's candidate pipeline."},
+    {name:"Workday",desc:"Push completed interview records to Workday HCM."},
+  ],
+  "CRM & Knowledge": [
+    {name:"Salesforce",desc:"Log interview insights to contact and opportunity records."},
+    {name:"HubSpot",desc:"Push discovery interview summaries to HubSpot contacts."},
+    {name:"Notion",desc:"Auto-generate Notion pages per completed interview."},
+    {name:"Airtable",desc:"Route structured transcript data to any Airtable base."},
+  ],
+  "Notifications": [
+    {name:"Slack",desc:"Real-time alerts when interviews complete or need review."},
+    {name:"Microsoft Teams",desc:"Teams notifications for interview events and completions."},
+    {name:"Email",desc:"Configurable email notifications per event type."},
+    {name:"Zapier",desc:"Connect AnyInterview to 5,000+ apps via Zapier triggers."},
+  ],
+  "Developer": [
+    {name:"REST API",desc:"Full CRUD API for interviews, participants, and transcripts."},
+    {name:"Webhooks",desc:"10 event types, configurable retry logic, delivery receipts."},
+    {name:"CSV Export",desc:"Export any dataset — transcripts, scores, metadata — as CSV."},
+    {name:"OpenAPI",desc:"Download the OpenAPI 3.1 spec and generate your own client."},
+  ]
+};
+
+const webhookEvents = [
+  "interview.created","interview.started","interview.completed",
+  "interview.abandoned","transcript.ready","score.ready",
+  "recording.ready","participant.consented","follow_up.triggered","error.occurred"
+];
+---
+<InnerLayout
+  title="Integrations — AnyInterview"
+  description="Connect AnyInterview to your ATS, CRM, Notion, Slack, and more. Webhooks and REST API for custom pipelines."
+  schema={schema}
+  canonical="https://anyinterview.to/integrations"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">Integrations</p>
+      <h1>Interviews that plug into <em>where you already work.</em></h1>
+      <p class="ip-hero-sub">Transcripts in your ATS. Insights in your Notion. Alerts in your Slack. AnyInterview pushes results where they need to go — automatically.</p>
+      <div class="ip-cta-row">
+        <a href="#" class="ip-cta-primary" data-action="open-demo">Book a demo →</a>
+        <a href="/api" class="ip-cta-secondary">API reference →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner">
+      {Object.entries(integrations).map(([group, items]) => (
+        <div class="int-group">
+          <h3 class="int-group-label">{group}</h3>
+          <div class="ip-card-grid--4">
+            {items.map(item => (
+              <div class="ip-card">
+                <div class="ip-card-icon int-monogram">{item.name.charAt(0)}</div>
+                <h3>{item.name}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">Webhooks</p>
+      <h2>Any event. <em>Any endpoint.</em></h2>
+      <p class="ip-section-lead">Subscribe to any interview event and we'll POST it to your endpoint. Configurable retry logic, exponential backoff, and per-endpoint delivery receipts.</p>
+      <div class="webhook-grid">
+        {webhookEvents.map(evt => (
+          <div class="webhook-event"><code>{evt}</code></div>
+        ))}
+      </div>
+      <p class="webhook-note">See the full event schema in our <a href="/api">API reference</a>.</p>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Missing an integration? <em>Tell us.</em></h2>
+      <p>We build what customers actually need. If it's not on the list, it's probably on the roadmap — or we'll put it there.</p>
+      <a href="#" class="ip-cta-primary" data-action="open-demo">Talk to us →</a>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .int-group { margin-bottom: 56px; }
+  .int-group:last-child { margin-bottom: 0; }
+  .int-group-label {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 20px;
+  }
+  .int-monogram {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .webhook-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .webhook-event {
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .webhook-event code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .webhook-note { font-size: 14px; color: var(--ink-mute); }
+  .webhook-note a { color: var(--accent); }
+  @media (max-width: 900px) { .webhook-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .webhook-grid { grid-template-columns: 1fr; } }
+</style>

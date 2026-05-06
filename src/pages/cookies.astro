@@ -1,0 +1,199 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cookie Policy — AnyInterview",
+  "url": "https://anyinterview.to/cookies",
+  "description": "AnyInterview Cookie Policy. What cookies we use, why, and how to control them.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"Cookie Policy","item":"https://anyinterview.to/cookies"}]}
+};
+
+const cookieTypes = [
+  {
+    type: "Essential",
+    color: "essential",
+    desc: "Required for the platform to function. Cannot be disabled.",
+    cookies: [
+      { name: "ai_session", purpose: "Maintains your authenticated session", duration: "Session" },
+      { name: "ai_csrf", purpose: "Cross-site request forgery protection", duration: "Session" },
+      { name: "ai_prefs", purpose: "Stores UI preferences (theme, language)", duration: "1 year" },
+    ]
+  },
+  {
+    type: "Analytics",
+    color: "analytics",
+    desc: "Help us understand how the platform is used so we can improve it. No personally identifiable information is shared with third parties.",
+    cookies: [
+      { name: "_plausible", purpose: "Privacy-first analytics (Plausible.io). No cross-site tracking.", duration: "Session" },
+      { name: "ai_perf", purpose: "Performance timing and error rate monitoring (internal only)", duration: "30 days" },
+    ]
+  },
+  {
+    type: "Preference",
+    color: "preference",
+    desc: "Remember choices you've made to give you a more personalized experience.",
+    cookies: [
+      { name: "ai_dismissed", purpose: "Tracks which in-app banners you've dismissed", duration: "90 days" },
+      { name: "ai_tour", purpose: "Records which onboarding steps are complete", duration: "1 year" },
+    ]
+  }
+];
+---
+<InnerLayout
+  title="Cookie Policy — AnyInterview"
+  description="AnyInterview Cookie Policy. What cookies we set, why we use them, and how to control or disable them."
+  schema={schema}
+  canonical="https://anyinterview.to/cookies"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">Legal</p>
+      <h1>Cookie <em>Policy.</em></h1>
+      <p class="ip-hero-sub">Effective January 1, 2026. We use a small number of cookies to keep the platform working and to understand how it's used.</p>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+
+        <h2>What is a cookie?</h2>
+        <p>Cookies are small text files that websites store on your browser. They serve different purposes: keeping you logged in, remembering your preferences, and helping us understand how people use the product. We don't use cookies for advertising, tracking across other websites, or profiling.</p>
+
+        <h2>Cookies we use</h2>
+
+      </div>
+
+      {cookieTypes.map(group => (
+        <div class="cookie-group">
+          <div class="cookie-group-header">
+            <span class={`cookie-type-badge cookie-type-badge--${group.color}`}>{group.type}</span>
+            <p class="cookie-group-desc">{group.desc}</p>
+          </div>
+          <div class="cookie-table-wrapper">
+            <table class="cookie-table">
+              <thead>
+                <tr>
+                  <th>Cookie</th>
+                  <th>Purpose</th>
+                  <th>Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                {group.cookies.map(c => (
+                  <tr>
+                    <td><code>{c.name}</code></td>
+                    <td>{c.purpose}</td>
+                    <td>{c.duration}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+
+      <div class="ip-prose">
+
+        <h2>Third-party cookies</h2>
+        <p>We use Plausible Analytics, a privacy-first analytics tool that does not set cross-site tracking cookies, does not use fingerprinting, and does not share data with ad networks. Plausible is fully GDPR-compliant and does not require a cookie consent banner under most interpretations of EU guidance — but we include it here for full transparency.</p>
+        <p>We do not use Google Analytics, Facebook Pixel, or any other advertising or behavioral tracking tools on our platform or marketing site.</p>
+
+        <h2>How to control cookies</h2>
+        <p>You can control and delete cookies through your browser settings. Disabling essential cookies will break authentication and core platform functionality. Disabling analytics or preference cookies will degrade your experience but will not prevent you from using the Service.</p>
+        <p>Browser-specific guides:</p>
+        <ul>
+          <li><strong>Chrome:</strong> Settings → Privacy and security → Cookies and other site data</li>
+          <li><strong>Firefox:</strong> Settings → Privacy & Security → Cookies and Site Data</li>
+          <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data</li>
+          <li><strong>Edge:</strong> Settings → Cookies and site permissions → Cookies and site data</li>
+        </ul>
+
+        <h2>Interview participant sessions</h2>
+        <p>When a participant opens an interview link, we set a single session cookie to maintain their interview state and prevent duplicate submissions. This cookie expires when the session ends or after 24 hours, whichever comes first. It contains no personally identifiable information and is not used for tracking.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this Cookie Policy to reflect changes in the cookies we use or for operational, legal, or regulatory reasons. Material changes will be communicated via email or through a notice in the platform. The effective date at the top of this page will always reflect the date of the most recent update.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about cookies should be directed to <a href="mailto:privacy@anyinterview.to">privacy@anyinterview.to</a>.</p>
+
+      </div>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .ip-prose { color: var(--ink-soft); }
+  .ip-prose h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin: 48px 0 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--rule);
+  }
+  .ip-prose h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+  .ip-prose p { font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
+  .ip-prose ul { padding-left: 20px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .ip-prose ul li { font-size: 15px; line-height: 1.65; }
+  .ip-prose a { color: var(--accent); }
+
+  .cookie-group { margin-bottom: 40px; }
+  .cookie-group-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .cookie-type-badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .cookie-type-badge--essential { background: #fde8e8; color: #8a2020; }
+  .cookie-type-badge--analytics { background: #e8f0fb; color: #1d3557; }
+  .cookie-type-badge--preference { background: #f4e8fb; color: #6b2d8a; }
+  .cookie-group-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; }
+
+  .cookie-table-wrapper { overflow-x: auto; }
+  .cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .cookie-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 10px 16px;
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+  }
+  .cookie-table td {
+    padding: 12px 16px;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .cookie-table code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+</style>

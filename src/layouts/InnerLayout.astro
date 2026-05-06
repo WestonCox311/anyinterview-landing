@@ -1,0 +1,289 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  schema?: object;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description, schema, canonical, ogImage } = Astro.props;
+---
+<BaseLayout title={title} description={description} schema={schema} canonical={canonical} ogImage={ogImage}>
+  <div class="inner-page">
+    <Nav />
+    <slot />
+    <Footer />
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .inner-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Shared inner page section styles */
+  .ip-hero {
+    padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 56px) clamp(60px, 8vh, 100px);
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .ip-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 60% at 20% 0%, rgba(29,53,87,0.04), transparent 65%),
+      radial-gradient(ellipse 40% 40% at 85% 80%, rgba(29,53,87,0.03), transparent 60%);
+    pointer-events: none;
+  }
+  .ip-hero-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .ip-eyebrow {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .ip-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .ip-hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .ip-hero-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(17px, 1.6vw, 22px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin-bottom: 40px;
+  }
+  .ip-cta-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .ip-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 26px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .ip-cta-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .ip-cta-secondary {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    transition: color 0.2s ease;
+  }
+  .ip-cta-secondary:hover { color: var(--accent); }
+
+  .ip-section {
+    padding: clamp(64px, 10vh, 112px) clamp(20px, 5vw, 56px);
+    background: var(--paper);
+  }
+  .ip-section--alt {
+    background: var(--paper-cool);
+  }
+  .ip-section--dark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .ip-section-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .ip-section-inner--narrow {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .ip-section-label {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 20px;
+  }
+  .ip-section--dark .ip-section-label { color: rgba(245,242,234,0.5); }
+
+  .ip-section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .ip-section--dark h2 { color: var(--paper); }
+  .ip-section h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .ip-section--dark h2 em { color: #c4d2e8; }
+
+  .ip-section-lead {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 48px;
+    max-width: 64ch;
+  }
+  .ip-section--dark .ip-section-lead { color: rgba(245,242,234,0.75); }
+
+  .ip-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .ip-card-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .ip-card-grid--4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 1000px) {
+    .ip-card-grid { grid-template-columns: repeat(2, 1fr); }
+    .ip-card-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .ip-card-grid, .ip-card-grid--2, .ip-card-grid--4 { grid-template-columns: 1fr; }
+  }
+
+  .ip-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .ip-card:hover { border-color: var(--ink-faint); transform: translateY(-2px); }
+  .ip-card-icon {
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ip-card-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .ip-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .ip-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .ip-prose {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  .ip-prose h2, .ip-prose h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin: 48px 0 16px;
+  }
+  .ip-prose h2 { font-size: 28px; }
+  .ip-prose h3 { font-size: 21px; }
+  .ip-prose p { margin-bottom: 20px; }
+  .ip-prose ul, .ip-prose ol { margin: 0 0 20px 24px; }
+  .ip-prose li { margin-bottom: 8px; }
+  .ip-prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+  .ip-closing {
+    background: var(--ink);
+    padding: clamp(72px, 10vh, 120px) clamp(20px, 5vw, 56px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .ip-closing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 30% 30%, rgba(29,53,87,0.4), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 80%, rgba(29,53,87,0.3), transparent 60%);
+    pointer-events: none;
+  }
+  .ip-closing-inner { max-width: 720px; margin: 0 auto; position: relative; }
+  .ip-closing h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(34px, 4.5vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--paper);
+    margin-bottom: 24px;
+  }
+  .ip-closing h2 em { font-style: italic; color: #c4d2e8; font-weight: 400; }
+  .ip-closing p {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.55;
+    color: rgba(245,242,234,0.75);
+    margin-bottom: 40px;
+  }
+  .ip-closing-meta {
+    margin-top: 18px;
+    font-size: 12.5px;
+    color: rgba(245,242,234,0.5);
+    letter-spacing: 0.04em;
+  }
+  .ip-closing-meta .dot {
+    display: inline-block;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(245,242,234,0.4);
+    margin: 0 8px 2px;
+    vertical-align: middle;
+  }
+</style>

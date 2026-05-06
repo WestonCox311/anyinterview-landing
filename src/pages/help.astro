@@ -1,0 +1,204 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://anyinterview.to/help",
+      "url": "https://anyinterview.to/help",
+      "name": "Help Center — AnyInterview",
+      "description": "Answers to common questions about using AnyInterview: setup, interviews, voice settings, transcripts, billing, and more."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I send my first interview?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pick a template or describe your interview in chat. The AI builds the structure, you review it, then click 'Get share link.' Send that link to your participant by email, message, or embed it in your existing workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does participant consent work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Before every interview, participants see a plain-language AI-interview disclosure. They must acknowledge it to proceed. Their consent is timestamped and stored with the transcript."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the AI interviewer's voice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go to the Voice tab in the studio and choose from four voice profiles, or adjust pacing and style individually. Voice settings are saved per template."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a participant drops off mid-interview?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They can resume within the session window (default 24 hours, configurable). Partial transcripts are available immediately in your dashboard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I export a transcript?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the interview in your dashboard, click 'Export', and choose PDF, DOCX, or JSON. Exports include the full transcript, timestamps, and AI summary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I cancel or pause an interview in progress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Interviews can be cancelled from the dashboard at any time. Participants receive an automated notification. Partial recordings are retained per your account's retention settings."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},
+        {"@type":"ListItem","position":2,"name":"Help Center","item":"https://anyinterview.to/help"}
+      ]
+    }
+  ]
+};
+---
+<InnerLayout title="Help Center — AnyInterview" description="Answers to common questions about using AnyInterview: setup, interviews, voice settings, transcripts, billing, and more." schema={schema}>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <span class="ip-eyebrow">Help Center</span>
+      <h1>Find your answer. <em>Fast.</em></h1>
+      <p class="ip-hero-sub">Search or browse. If you can't find it, write to us — we respond the same day.</p>
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner">
+      <span class="ip-section-label">Categories</span>
+      <h2>Browse by <em>topic.</em></h2>
+      <div class="ip-card-grid ip-card-grid--2">
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+            </svg>
+          </div>
+          <h3>Getting Started</h3>
+          <p>Create your account, set up your first interview, and send your first link.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </div>
+          <h3>Managing Interviews</h3>
+          <p>Participant management, link sharing, rescheduling, and troubleshooting.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
+            </svg>
+          </div>
+          <h3>Voice &amp; Settings</h3>
+          <p>Interviewer voice, pacing, interview style, and template customization.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <h3>Billing &amp; Account</h3>
+          <p>Plan changes, invoices, usage, and account settings.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <span class="ip-section-label">Popular Articles</span>
+      <h2 class="ip-section-h2" style="font-family:'Fraunces',serif;font-size:clamp(28px,4vw,42px);font-weight:600;color:var(--ink);margin:0 0 48px 0;line-height:1.2;">Common questions</h2>
+
+      <div class="help-qa">
+        <h3>How do I send my first interview?</h3>
+        <p>Pick a template or describe your interview in chat. The AI builds the structure, you review it, then click 'Get share link.' Send that link to your participant by email, message, or embed it in your existing workflow.</p>
+      </div>
+
+      <div class="help-qa">
+        <h3>How does participant consent work?</h3>
+        <p>Before every interview, participants see a plain-language AI-interview disclosure. They must acknowledge it to proceed. Their consent is timestamped and stored with the transcript.</p>
+      </div>
+
+      <div class="help-qa">
+        <h3>Can I customize the AI interviewer's voice?</h3>
+        <p>Yes. Go to the Voice tab in the studio and choose from four voice profiles, or adjust pacing and style individually. Voice settings are saved per template.</p>
+      </div>
+
+      <div class="help-qa">
+        <h3>What happens if a participant drops off mid-interview?</h3>
+        <p>They can resume within the session window (default 24 hours, configurable). Partial transcripts are available immediately in your dashboard.</p>
+      </div>
+
+      <div class="help-qa">
+        <h3>How do I export a transcript?</h3>
+        <p>Open the interview in your dashboard, click 'Export', and choose PDF, DOCX, or JSON. Exports include the full transcript, timestamps, and AI summary.</p>
+      </div>
+
+      <div class="help-qa">
+        <h3>How do I cancel or pause an interview in progress?</h3>
+        <p>Interviews can be cancelled from the dashboard at any time. Participants receive an automated notification. Partial recordings are retained per your account's retention settings.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(28px,4vw,42px);font-weight:600;color:var(--ink);margin:0 0 16px 0;line-height:1.2;">Still stuck?</h2>
+      <p class="ip-section-lead">Email support@anyinterview.to — we respond within one business day.</p>
+      <a href="mailto:support@anyinterview.to" class="ip-cta-primary" style="margin-top:24px;display:inline-block;">Email support →</a>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .help-qa {
+    margin-bottom: 36px;
+  }
+
+  .help-qa h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .help-qa p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+</style>

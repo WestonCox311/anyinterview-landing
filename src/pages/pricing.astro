@@ -1,0 +1,259 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AnyInterview Pricing",
+  "url": "https://anyinterview.to/pricing",
+  "description": "Simple, usage-based pricing for AI interviews. Free to try, no credit card required.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"Pricing","item":"https://anyinterview.to/pricing"}]}
+};
+---
+<InnerLayout
+  title="Pricing — AnyInterview"
+  description="Simple, usage-based pricing. Free to try — no credit card required. Scale from one pilot to thousands of interviews."
+  schema={schema}
+  canonical="https://anyinterview.to/pricing"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">Pricing</p>
+      <h1>Start free. Pay when <em>interviews happen.</em></h1>
+      <p class="ip-hero-sub">No seats. No minimums. You pay per completed interview — nothing else. Your first 10 are on us.</p>
+    </div>
+  </section>
+
+  <section class="pricing-section">
+    <div class="pricing-inner">
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-amount"><span class="pricing-num">$0</span><span class="pricing-per">/month</span></div>
+          <p class="pricing-tagline">10 interviews included every month. No credit card required.</p>
+          <ul class="pricing-features">
+            <li>10 completed interviews/month</li>
+            <li>Full transcripts &amp; recordings</li>
+            <li>Voice + video interviews</li>
+            <li>AI-generated summaries</li>
+            <li>40+ templates</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#" class="pricing-cta" data-action="open-demo">Start free →</a>
+        </div>
+
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-badge">Most popular</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-amount"><span class="pricing-num">$0.75</span><span class="pricing-per">/interview</span></div>
+          <p class="pricing-tagline">Everything in Free, plus the tools for serious programs.</p>
+          <ul class="pricing-features">
+            <li>Unlimited interviews</li>
+            <li>Custom question flows</li>
+            <li>Webhook integrations</li>
+            <li>Team sharing &amp; roles</li>
+            <li>Priority support (1 business day)</li>
+            <li>Usage dashboard &amp; exports</li>
+          </ul>
+          <a href="#" class="pricing-cta pricing-cta--featured" data-action="open-demo">Book a demo →</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-amount"><span class="pricing-num">Custom</span></div>
+          <p class="pricing-tagline">Volume pricing, compliance tooling, and dedicated support.</p>
+          <ul class="pricing-features">
+            <li>Volume discounts</li>
+            <li>SSO/SAML</li>
+            <li>HIPAA/DPA available</li>
+            <li>Custom data residency</li>
+            <li>Dedicated CSM</li>
+            <li>SLA &amp; uptime guarantees</li>
+          </ul>
+          <a href="#" class="pricing-cta" data-action="open-demo">Talk to us →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <p class="ip-section-label">Common Questions</p>
+      <h2>Pricing <em>explained.</em></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What counts as a completed interview?</button>
+          <div class="faq-a"><p>A completed interview is one where the participant reached the end of the conversation flow. Partial sessions under 2 minutes are not counted. Sessions where a participant drops off partway through and doesn't resume are billed at 50% of the interview rate.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can I cancel anytime?</button>
+          <div class="faq-a"><p>Yes. Pro is billed monthly with no lock-in — cancel before your next billing period and you won't be charged. Enterprise customers have annual commitments with terms defined in their contract.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is there a per-seat fee?</button>
+          <div class="faq-a"><p>No. Pricing is per completed interview, not per user. You can add as many team members as you need at no additional cost.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How does billing work?</button>
+          <div class="faq-a"><p>Pro customers are invoiced monthly for usage from the prior period. You can see your usage in real time in the dashboard. Enterprise customers receive a custom invoice on a schedule defined in their contract.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do you offer discounts for nonprofits or universities?</button>
+          <div class="faq-a"><p>Yes. Email us at hello@anyinterview.to with your organization's details and we'll work out a rate that makes sense.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Your first 10 interviews are <em>on us.</em></h2>
+      <p>No credit card. No commitment. Set up your first interview and send the link.</p>
+      <a href="#" class="ip-cta-primary" data-action="open-demo">Get started free →</a>
+      <p class="ip-closing-meta">Free forever up to 10/month <span class="dot"></span> No credit card <span class="dot"></span> Cancel anytime</p>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .pricing-section {
+    padding: clamp(64px, 10vh, 112px) clamp(20px, 5vw, 56px);
+    background: var(--paper-cool);
+  }
+  .pricing-inner { max-width: 1100px; margin: 0 auto; }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+  .pricing-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pricing-card--featured {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+    transform: scale(1.03);
+  }
+  .pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--paper);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .pricing-tier {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .pricing-card--featured .pricing-tier { color: rgba(245,242,234,0.6); }
+  .pricing-amount { display: flex; align-items: baseline; gap: 4px; }
+  .pricing-num {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .pricing-card--featured .pricing-num { color: var(--paper); }
+  .pricing-per { font-size: 14px; color: var(--ink-mute); }
+  .pricing-card--featured .pricing-per { color: rgba(245,242,234,0.6); }
+  .pricing-tagline {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+  }
+  .pricing-card--featured .pricing-tagline {
+    color: rgba(245,242,234,0.75);
+    border-color: rgba(245,242,234,0.15);
+  }
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .pricing-features li {
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding-left: 20px;
+    position: relative;
+  }
+  .pricing-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .pricing-card--featured .pricing-features li { color: rgba(245,242,234,0.8); }
+  .pricing-card--featured .pricing-features li::before { color: #c4d2e8; }
+  .pricing-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    background: var(--paper-warm);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .pricing-cta:hover { background: var(--paper); transform: translateY(-1px); }
+  .pricing-cta--featured {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: transparent;
+  }
+  .pricing-cta--featured:hover { background: var(--white); }
+
+  .faq-list { margin-top: 8px; }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-q {
+    width: 100%; text-align: left; padding: 18px 0;
+    font-size: 15px; font-weight: 500; color: var(--ink);
+    background: transparent; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-q::after { content: "+"; font-size: 20px; font-weight: 300; color: var(--ink-mute); flex-shrink: 0; }
+  .faq-item.open .faq-q::after { content: "−"; }
+  .faq-a { display: none; padding-bottom: 18px; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-a p { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); }
+
+  @media (max-width: 860px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card--featured { transform: none; }
+  }
+</style>
+<script>import '../scripts/faq-accordion.ts';</script>

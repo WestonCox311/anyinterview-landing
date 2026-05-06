@@ -7,16 +7,48 @@ import DemoModal from '../components/DemoModal.astro';
 
 interface Props {
   title?: string;
+  description?: string;
+  canonical?: string;
+  schema?: object;
+  ogImage?: string;
 }
-const { title = 'AnyInterview — Conduct interviews without being in the room' } = Astro.props;
+
+const {
+  title = 'AnyInterview — Conduct interviews without being in the room',
+  description = 'Configure a structured conversation in chat. Send a link. Get it back, transcribed and recorded — ready to use.',
+  canonical,
+  schema,
+  ogImage = 'https://anyinterview.to/og-default.png',
+} = Astro.props;
+
+const canonicalUrl = canonical ?? `https://anyinterview.to${Astro.url.pathname}`;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Configure a structured conversation in chat. Send a link. Get it back, transcribed and recorded — ready to use." />
+    <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="AnyInterview" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD -->
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

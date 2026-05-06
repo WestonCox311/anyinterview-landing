@@ -1,0 +1,152 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Changelog — AnyInterview",
+  "url": "https://anyinterview.to/changelog",
+  "description": "What's new at AnyInterview. Product updates, new features, and improvements — shipped weekly.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"Changelog","item":"https://anyinterview.to/changelog"}]}
+};
+
+const entries = [
+  {
+    date: "May 2026",
+    badge: "NEW",
+    title: "Studio Voice Tab",
+    body: "Configure your interviewer's voice, pacing, and interview style directly in the studio. Choose from four voice profiles — measured, warm, direct, or neutral — or adjust pacing and follow-up depth individually. Voice settings are saved per template and applied to every session using it. Available to all Pro accounts."
+  },
+  {
+    date: "April 2026",
+    badge: "NEW",
+    title: "Score Cards",
+    body: "AI-generated competency scores now appear alongside each interview section in your dashboard. Every score comes with quoted evidence from the transcript — you can see exactly what the model is responding to. Scoring rubrics are configurable per template, and scores can be exported with the transcript. Works across all interview types."
+  },
+  {
+    date: "April 2026",
+    badge: "IMPROVED",
+    title: "Proctoring Stability",
+    body: "Browser-lock mode now survives network interruptions. Sessions resume automatically within 3 minutes of reconnection, continuing from the last completed question. Admin dashboards now show a session continuity event log — time of disconnect, duration, and resumption status. No participant action required."
+  },
+  {
+    date: "March 2026",
+    badge: "NEW",
+    title: "Webhook Events",
+    body: "Ten new webhook event types — interview.created, interview.started, interview.completed, interview.abandoned, transcript.ready, score.ready, recording.ready, participant.consented, follow_up.triggered, error.occurred. Configurable retry logic with exponential backoff and per-endpoint delivery receipts. Full event schema in the API reference."
+  },
+  {
+    date: "March 2026",
+    badge: "NEW",
+    title: "Template Library",
+    body: "40+ ready-made interview templates across six use-case categories: hiring, customer discovery, user research, HR, legal intake, and audit & compliance. Filter by category, duration, and interview type. Every template is fully editable. Start any interview in 30 seconds."
+  }
+];
+---
+<InnerLayout
+  title="Changelog — AnyInterview"
+  description="What's new at AnyInterview. Product updates, new features, and improvements — shipped weekly."
+  schema={schema}
+  canonical="https://anyinterview.to/changelog"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">Changelog</p>
+      <h1>What we've shipped <em>recently.</em></h1>
+      <p class="ip-hero-sub">We ship every week. Here's what's landed.</p>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="cl-list">
+        {entries.map(entry => (
+          <article class="cl-entry">
+            <div class="cl-meta">
+              <span class="cl-date">{entry.date}</span>
+              <span class={`cl-badge cl-badge--${entry.badge.toLowerCase()}`}>{entry.badge}</span>
+            </div>
+            <h2 class="cl-title">{entry.title}</h2>
+            <p class="cl-body">{entry.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner ip-section-inner--narrow" style="text-align:center">
+      <h2 class="ip-section h2">Get updates <em>in your inbox.</em></h2>
+      <p style="font-size:15px;color:var(--ink-soft);margin:12px 0 28px;line-height:1.6">No noise. Just product updates when something significant ships.</p>
+      <div class="subscribe-form">
+        <input type="email" placeholder="you@company.com" class="subscribe-input" />
+        <button class="subscribe-btn" data-action="open-demo">Subscribe →</button>
+      </div>
+      <p style="font-size:12px;color:var(--ink-faint);margin-top:12px">Or book a demo to see what's coming next.</p>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .cl-list { display: flex; flex-direction: column; gap: 0; }
+  .cl-entry {
+    padding: clamp(32px, 5vh, 56px) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cl-entry:last-child { border-bottom: none; }
+  .cl-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .cl-date {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .cl-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .cl-badge--new { background: var(--accent-soft); color: var(--accent); }
+  .cl-badge--improved { background: #e9f7ef; color: #1a6b3a; }
+  .cl-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .cl-body { font-size: 15.5px; line-height: 1.7; color: var(--ink-soft); }
+
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-input {
+    flex: 1;
+    padding: 11px 16px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: var(--white);
+    outline: none;
+  }
+  .subscribe-input:focus { border-color: var(--accent); }
+  .subscribe-btn {
+    padding: 11px 20px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .subscribe-btn:hover { background: var(--accent); }
+  @media (max-width: 480px) { .subscribe-form { flex-direction: column; } }
+</style>

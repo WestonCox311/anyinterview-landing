@@ -1,0 +1,113 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://anyinterview.to/security",
+      "url": "https://anyinterview.to/security",
+      "name": "Security & Compliance — AnyInterview",
+      "description": "AnyInterview's security architecture: AES-256 encryption, TLS 1.3, SOC 2 alignment, GDPR compliance, HIPAA-ready paths, and seven-year audit playback."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},
+        {"@type":"ListItem","position":2,"name":"Security","item":"https://anyinterview.to/security"}
+      ]
+    }
+  ]
+};
+---
+<InnerLayout title="Security & Compliance — AnyInterview" description="AnyInterview's security architecture: AES-256 encryption, TLS 1.3, SOC 2 alignment, GDPR compliance, HIPAA-ready paths, and seven-year audit playback." schema={schema}>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <span class="ip-eyebrow">Security &amp; Compliance</span>
+      <h1>Security isn't a feature. <em>It's the foundation.</em></h1>
+      <p class="ip-hero-sub">Every interview is encrypted end-to-end. Every consent is timestamped. Every record is replayable for seven years. Here's how.</p>
+      <div class="ip-cta-row">
+        <a href="/trust" class="ip-cta-secondary">Trust Center →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section ip-section--alt">
+    <div class="ip-section-inner">
+      <span class="ip-section-label">Overview</span>
+      <h2>What we <em>protect.</em></h2>
+      <div class="ip-card-grid ip-card-grid--2">
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Encrypted end to end</h3>
+          <p>AES-256 at rest. TLS 1.3 in transit. Key management via dedicated KMS, with optional customer-managed keys (CMEK) for enterprise accounts.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Consent &amp; disclosure</h3>
+          <p>Every interviewee sees an AI-interview disclosure before they begin. Consent is timestamped and stored immutably alongside the transcript.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Seven-year audit playback</h3>
+          <p>Every interview and every system event is replayable for seven years. Built for the long retention windows regulated industries require.</p>
+        </div>
+
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Data residency</h3>
+          <p>US, EU, or APAC region pinning available for enterprise. GDPR-compliant by default. HIPAA-ready paths for clinical and HR work.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+        <h2>Encryption</h2>
+        <p>Interview recordings and transcripts are encrypted with AES-256 at rest. All data in transit uses TLS 1.3. Key management is handled via a dedicated KMS. Enterprise customers can opt into customer-managed encryption keys (CMEK).</p>
+
+        <h2>Access controls</h2>
+        <p>Role-based access control (RBAC) applies across all account tiers. Enterprise accounts support SSO/SAML and configurable session policies. Every administrative action is logged in an immutable audit trail.</p>
+
+        <h2>Compliance posture</h2>
+        <p>SOC 2 Type II audit is in progress (expected Q3 2026). We are GDPR-compliant by default, with DPA available at <a href="/dpa">/dpa</a>. HIPAA-ready data paths are available for healthcare and clinical customers. Proctoring features are designed to be BIPA-aware.</p>
+        <p>We operate sub-processors listed at <a href="/subprocessors">/subprocessors</a>. We take responsibility for their compliance under our DPA.</p>
+
+        <h2>Responsible disclosure</h2>
+        <p>If you've found a security issue, please email <a href="mailto:security@anyinterview.to">security@anyinterview.to</a> with details. We acknowledge all reports within 24 hours and commit to a remediation timeline for confirmed issues.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Questions about our <em>security posture?</em></h2>
+      <p>Talk to our team. We'll send documentation, answer specific questions, or schedule a technical review.</p>
+      <button class="ip-cta-primary" data-action="open-demo">Talk to us →</button>
+    </div>
+  </section>
+
+</InnerLayout>

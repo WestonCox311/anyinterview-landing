@@ -1,0 +1,202 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "How AnyInterview Works",
+  "url": "https://anyinterview.to/how-it-works",
+  "description": "From prompt to transcript in 90 seconds. See exactly how AnyInterview works.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"How It Works","item":"https://anyinterview.to/how-it-works"}]},
+  "mainEntity": {
+    "@type": "HowTo",
+    "name": "How to run an AI interview with AnyInterview",
+    "step": [
+      {"@type":"HowToStep","position":1,"name":"Describe","text":"Tell us what kind of interview you need in plain chat. Role, questions, tone, length — or start from a template."},
+      {"@type":"HowToStep","position":2,"name":"Delegate","text":"Send your participant a private link. They complete the interview on their schedule — voice and video."},
+      {"@type":"HowToStep","position":3,"name":"Debrief","text":"You get back a full transcript, recording, and AI-generated summary. Scored, timestamped, ready to use."}
+    ]
+  }
+};
+---
+<InnerLayout
+  title="How AnyInterview Works — From Prompt to Transcript in 90 Seconds"
+  description="See exactly how AnyInterview works: describe your interview in chat, send a link, get back a full transcript and recording. No setup, no scheduling."
+  schema={schema}
+  canonical="https://anyinterview.to/how-it-works"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">How It Works</p>
+      <h1>From idea to share link <em>in 90 seconds.</em></h1>
+      <p class="ip-hero-sub">Three steps. No setup. No scheduling. Just the interview.</p>
+      <div class="ip-cta-row">
+        <a href="#" class="ip-cta-primary" data-action="open-demo">Try it now →</a>
+        <a href="/templates" class="ip-cta-secondary">Browse templates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h2>Describe</h2>
+            <p>Tell us what kind of interview you need — in plain chat. Role, questions, tone, length. Or start from one of 40+ templates built for hiring, discovery, research, legal, HR, and audit.</p>
+            <p>The AI builds the structure instantly. You review it, tweak it, approve it. The whole thing takes under 2 minutes.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h2>Delegate</h2>
+            <p>You get a private link. Send it to your participant — by email, Slack, SMS, or embedded in your existing workflow. They click it and complete the interview on their schedule.</p>
+            <p>Voice and video. No app to install. No scheduling required. You don't need to be there.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h2>Debrief</h2>
+            <p>The moment they finish, you get a notification. Open your dashboard: full transcript, recording, AI-generated summary, and competency scores. Timestamped, searchable, shareable.</p>
+            <p>The interview happened. The data landed. The calendar stayed free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">Under the Hood</p>
+      <h2>The technology <em>doing the work.</em></h2>
+      <div class="ip-card-grid--2">
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 013 3v7a3 3 0 01-6 0V5a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
+          </div>
+          <h3>Voice AI that listens</h3>
+          <p>Natural, adaptive conversation — not a rigid script. When a participant's answer is vague, the AI probes deeper. When it's complete, it moves on. Real-time, branching follow-ups based on what's actually said.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Real-time proctoring</h3>
+          <p>Browser-lock mode, activity monitoring, and continuity tracking for sessions that require it. No surveillance theater — just the right level of integrity for your use case.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3>Secure recording</h3>
+          <p>AES-256 at rest. TLS 1.3 in transit. Consent captured before the first question. Every session is an immutable record — replayable, exportable, yours.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Transcript engine</h3>
+          <p>Word-level timestamps, speaker diarization, and domain vocabulary tuned per interview type. Transcripts are available within 2 minutes of session completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <p class="ip-section-label">Common Questions</p>
+      <h2>Before you <em>start.</em></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Does the participant need to install anything?</button>
+          <div class="faq-a"><p>No. The interview runs in any modern browser — desktop or mobile. No app, no plugin, no account required. The participant clicks the link and starts.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can I use my own questions?</button>
+          <div class="faq-a"><p>Yes. Every question in every template is fully editable. Or describe your requirements in chat — your questions, your order, your tone — and we'll build the structure from scratch.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What if the participant drops off mid-interview?</button>
+          <div class="faq-a"><p>They can resume within the session window — configurable, default 24 hours. The interview picks up exactly where they left off. Partial transcripts are available in your dashboard immediately.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How long does transcription take?</button>
+          <div class="faq-a"><p>Transcripts are available within 2 minutes of interview completion for most sessions. Longer sessions (60+ minutes) may take up to 5 minutes.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is there a time limit on interviews?</button>
+          <div class="faq-a"><p>Templates can be configured from 5 to 120 minutes. Interviews automatically wrap at the configured time with a natural closing message to the participant.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Ready to try it? <em>90 seconds.</em></h2>
+      <p>Set up your first interview. Send the link. Get the transcript.</p>
+      <a href="#" class="ip-cta-primary" data-action="open-demo">Book a demo →</a>
+      <p class="ip-closing-meta">Free to try <span class="dot"></span> No credit card <span class="dot"></span> No setup</p>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 40px;
+    padding: clamp(40px, 6vh, 72px) 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(72px, 8vw, 120px);
+    font-weight: 300;
+    color: var(--accent-soft);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    padding-top: 4px;
+  }
+  .step-content h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .step-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .faq-list { margin-top: 8px; }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-q {
+    width: 100%; text-align: left; padding: 18px 0;
+    font-size: 15px; font-weight: 500; color: var(--ink);
+    background: transparent; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-q::after { content: "+"; font-size: 20px; font-weight: 300; color: var(--ink-mute); flex-shrink: 0; }
+  .faq-item.open .faq-q::after { content: "−"; }
+  .faq-a { display: none; padding-bottom: 18px; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-a p { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); }
+
+  @media (max-width: 600px) {
+    .step { grid-template-columns: 1fr; gap: 8px; }
+    .step-num { font-size: 48px; }
+  }
+</style>
+<script>import '../scripts/faq-accordion.ts';</script>

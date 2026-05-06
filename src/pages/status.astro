@@ -1,0 +1,211 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://anyinterview.to/status",
+      "url": "https://anyinterview.to/status",
+      "name": "Status — AnyInterview",
+      "description": "Current operational status of AnyInterview services. Real-time uptime and incident history."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},
+        {"@type":"ListItem","position":2,"name":"Status","item":"https://anyinterview.to/status"}
+      ]
+    }
+  ]
+};
+---
+<InnerLayout title="Status — AnyInterview" description="Current operational status of AnyInterview services. Real-time uptime and incident history." schema={schema}>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <span class="ip-eyebrow">Status</span>
+      <h1>All systems <em>operational.</em></h1>
+      <p class="ip-hero-sub">We monitor our infrastructure continuously. Everything is green.</p>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <span class="ip-section-label">Current Status</span>
+
+      <div class="status-list">
+
+        <div class="status-row">
+          <span class="status-service">Interview Engine</span>
+          <span class="status-badge status-badge--green">Operational</span>
+        </div>
+
+        <div class="status-row">
+          <span class="status-service">Recording &amp; Storage</span>
+          <span class="status-badge status-badge--green">Operational</span>
+        </div>
+
+        <div class="status-row">
+          <span class="status-service">Transcript Processing</span>
+          <span class="status-badge status-badge--green">Operational</span>
+        </div>
+
+        <div class="status-row">
+          <span class="status-service">Webhooks &amp; API</span>
+          <span class="status-badge status-badge--green">Operational</span>
+        </div>
+
+        <div class="status-row" style="border-bottom:none;">
+          <span class="status-service">Dashboard</span>
+          <span class="status-badge status-badge--green">Operational</span>
+        </div>
+
+      </div>
+
+      <div class="uptime-block">
+        <div class="uptime-number">99.97%</div>
+        <div class="uptime-label">uptime over the last 90 days</div>
+      </div>
+
+      <div class="incidents-block">
+        <h3 class="incidents-heading">Recent incidents</h3>
+        <p class="incidents-empty">No incidents in the last 30 days.</p>
+      </div>
+
+      <div class="subscribe-note">
+        <p>For real-time status alerts, email <a href="mailto:status@anyinterview.to">status@anyinterview.to</a> and we'll add you to the list.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Something not right? <em>Tell us immediately.</em></h2>
+      <p>Email status@anyinterview.to or support@anyinterview.to.</p>
+      <a href="mailto:support@anyinterview.to" class="ip-cta-primary">Email support →</a>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .status-list {
+    margin-top: 32px;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .status-service {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .status-badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.03em;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .status-badge--green {
+    background: #e6f4ec;
+    color: #1a7f3c;
+  }
+
+  .status-badge--yellow {
+    background: #fef9e7;
+    color: #9a6c00;
+  }
+
+  .status-badge--red {
+    background: #fde8e8;
+    color: #c0392b;
+  }
+
+  .uptime-block {
+    margin-top: 48px;
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--paper-cool);
+    border-radius: 12px;
+    border: 1px solid var(--rule);
+  }
+
+  .uptime-number {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(52px, 8vw, 80px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .uptime-label {
+    font-size: 14px;
+    color: var(--ink-mute);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .incidents-block {
+    margin-top: 48px;
+  }
+
+  .incidents-heading {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .incidents-empty {
+    font-size: 15px;
+    color: var(--ink-mute);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .subscribe-note {
+    margin-top: 36px;
+    padding: 20px 24px;
+    background: var(--accent-soft);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .subscribe-note p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .subscribe-note a {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .subscribe-note a:hover {
+    text-decoration: underline;
+  }
+</style>

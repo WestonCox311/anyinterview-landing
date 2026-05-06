@@ -1,0 +1,123 @@
+---
+import InnerLayout from '../../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AI Audit & Compliance Interviews",
+  "url": "https://anyinterview.to/for/audit-compliance",
+  "description": "Conduct structured audit interviews with full chain-of-custody. Seven-year playback, timestamped consent, encrypted end-to-end — built for regulated industries.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"Audit & Compliance","item":"https://anyinterview.to/for/audit-compliance"}]},
+  "about": {"@type":"Service","name":"AI Audit & Compliance Interviews","provider":{"@type":"Organization","name":"AnyInterview","url":"https://anyinterview.to"},"serviceType":"AI-powered audit and compliance interview documentation"}
+};
+---
+<InnerLayout
+  title="AI Audit & Compliance Interviews — Structured Evidence Collection | AnyInterview"
+  description="Conduct structured audit interviews with full chain-of-custody. Seven-year playback, timestamped consent, encrypted end-to-end — built for regulated industries."
+  schema={schema}
+  canonical="https://anyinterview.to/for/audit-compliance"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">Audit &amp; Compliance</p>
+      <h1>Every interview, <em>audit-ready.</em><br/>From the first question.</h1>
+      <p class="ip-hero-sub">When your interview records get subpoenaed or reviewed, your process becomes your defense. AnyInterview gives every conversation a chain of custody — timestamped, encrypted, replayable for seven years.</p>
+      <div class="ip-cta-row">
+        <a href="#" class="ip-cta-primary" data-action="open-demo">Book a demo →</a>
+        <a href="/security" class="ip-cta-secondary">Security &amp; compliance overview</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">The Problem</p>
+      <h2>Your notes aren't <em>evidence. Your recording is.</em></h2>
+      <p class="ip-section-lead">Audit interviews live in a legal and regulatory grey zone when the record is a set of handwritten notes and a vague recollection. Structured, recorded, timestamped interviews are a different category of documentation entirely.</p>
+      <div class="aud-cols">
+        <p>Internal audit teams conduct hundreds of interviews per year — walkthroughs, process inquiries, control assessments. The record of those interviews is often inconsistent: some recorded, most not; some transcribed, most relying on notes taken under time pressure. When a regulator or outside counsel asks to see your work, "the auditor's notes" is a weak foundation.</p>
+        <p>Compliance and legal teams face the same problem in a higher-stakes context. A SOX interview, a regulatory examination response, a third-party vendor assessment — each requires a complete record that demonstrates both what was asked and what was answered. AnyInterview creates that record automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">Built for Regulated Work</p>
+      <h2>The documentation that <em>survives scrutiny.</em></h2>
+      <p class="ip-section-lead">Every audit interview conducted through AnyInterview is a complete evidentiary record — not a summary, not notes, a full record.</p>
+      <div class="ip-card-grid--4">
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Seven-year tamper-evident archive</h3>
+          <p>Every interview and system event is stored in an immutable archive, replayable for seven years. Built for the long retention windows your industry requires.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>Timestamped consent</h3>
+          <p>Every interviewee acknowledges the AI-interview disclosure before the session begins. Consent is timestamped and stored immutably alongside the transcript.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3>AES-256 encryption</h3>
+          <p>Recordings and transcripts encrypted at rest with AES-256. All data in transit uses TLS 1.3. Optional customer-managed keys for enterprise deployments.</p>
+        </div>
+        <div class="ip-card">
+          <div class="ip-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>SOC 2 &amp; GDPR aligned</h3>
+          <p>SOC 2 Type II in progress. GDPR-compliant by default with DPA available. HIPAA-ready paths for healthcare and clinical audit work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <p class="ip-section-label">Use Cases</p>
+      <h2>Where audit teams <em>deploy AnyInterview.</em></h2>
+      <div class="ip-card-grid--2">
+        <div class="ip-card">
+          <h3>Internal audit walkthroughs</h3>
+          <p>Process walkthroughs, control assessments, and documentation interviews — all structured, all recorded, all searchable when the next audit cycle begins.</p>
+        </div>
+        <div class="ip-card">
+          <h3>SOX compliance evidence</h3>
+          <p>Management interviews for SOX 302 and 906 certifications. Complete records that your external auditors can review directly, without interpretation.</p>
+        </div>
+        <div class="ip-card">
+          <h3>Regulatory examination prep</h3>
+          <p>Practice walkthroughs before regulatory examinations. Identify gaps in your narrative before the examiner does.</p>
+        </div>
+        <div class="ip-card">
+          <h3>Third-party vendor assessments</h3>
+          <p>Structured vendor due diligence interviews. Consistent questionnaires across every vendor, with complete records for your vendor risk program.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Make your next audit <em>bulletproof.</em></h2>
+      <p>Every interview, a complete record. Every record, seven-year retention. Set up your first audit template in 90 seconds.</p>
+      <a href="#" class="ip-cta-primary" data-action="open-demo">Book a demo →</a>
+      <p class="ip-closing-meta">Free to try <span class="dot"></span> No credit card <span class="dot"></span> Enterprise DPA available</p>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .aud-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 8px; }
+  .aud-cols p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+  @media (max-width: 720px) { .aud-cols { grid-template-columns: 1fr; } }
+</style>

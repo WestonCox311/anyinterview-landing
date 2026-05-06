@@ -1,0 +1,193 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Subprocessors — AnyInterview",
+  "url": "https://anyinterview.to/subprocessors",
+  "description": "Current list of third-party subprocessors used by AnyInterview to deliver the platform. Updated with 30 days advance notice of changes.",
+  "breadcrumb": {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://anyinterview.to"},{"@type":"ListItem","position":2,"name":"Subprocessors","item":"https://anyinterview.to/subprocessors"}]}
+};
+
+const subprocessors = [
+  {
+    name: "Amazon Web Services (AWS)",
+    purpose: "Cloud infrastructure — compute, storage, database, and networking",
+    location: "United States (us-east-1, us-west-2); EU (eu-west-1) for EU-residency customers",
+    data: "All Customer Data, including recordings, transcripts, and account metadata",
+    link: "https://aws.amazon.com/compliance/gdpr-center/"
+  },
+  {
+    name: "OpenAI",
+    purpose: "AI transcription processing and competency scoring",
+    location: "United States",
+    data: "Interview audio (for transcription) and transcript text (for scoring). No data retained for model training without opt-in.",
+    link: "https://openai.com/enterprise-privacy"
+  },
+  {
+    name: "Stripe",
+    purpose: "Payment processing and subscription billing",
+    location: "United States",
+    data: "Billing contact information and transaction records. No payment card data is processed by AnyInterview.",
+    link: "https://stripe.com/privacy"
+  },
+  {
+    name: "Cloudflare",
+    purpose: "Content delivery network, DDoS protection, and DNS",
+    location: "Global (data processed at edge nodes; no Customer Data stored)",
+    data: "Network traffic metadata only. Cloudflare does not receive transcript or recording content.",
+    link: "https://www.cloudflare.com/trust-hub/gdpr/"
+  },
+  {
+    name: "Twilio SendGrid",
+    purpose: "Transactional email delivery (interview invitations, notifications, receipts)",
+    location: "United States",
+    data: "Participant email addresses, interview invitation content, and event notification data",
+    link: "https://www.twilio.com/en-us/legal/privacy"
+  },
+  {
+    name: "Datadog",
+    purpose: "Application performance monitoring, error tracking, and operational logging",
+    location: "United States",
+    data: "Anonymized event logs, system metrics, and error traces. Logs are scrubbed of PII before ingestion.",
+    link: "https://www.datadoghq.com/security/"
+  }
+];
+---
+<InnerLayout
+  title="Subprocessors — AnyInterview"
+  description="Current list of third-party subprocessors used by AnyInterview. We provide 30 days advance notice of any changes."
+  schema={schema}
+  canonical="https://anyinterview.to/subprocessors"
+>
+
+  <section class="ip-hero">
+    <div class="ip-hero-inner">
+      <p class="ip-eyebrow">Legal</p>
+      <h1>Our <em>Subprocessors.</em></h1>
+      <p class="ip-hero-sub">Last updated May 2026. We maintain this list and provide 30 days advance notice of any additions or changes.</p>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="sp-notice">
+        <p><strong>Change notifications:</strong> We will email your account's registered address at least 30 days before adding or changing any subprocessor. You may object to changes by notifying <a href="mailto:legal@anyinterview.to">legal@anyinterview.to</a> within 30 days of notification. For more detail on how we work with subprocessors, see our <a href="/dpa">Data Processing Agreement</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section">
+    <div class="ip-section-inner">
+      <div class="sp-table-wrapper">
+        <table class="sp-table">
+          <thead>
+            <tr>
+              <th>Subprocessor</th>
+              <th>Purpose</th>
+              <th>Location</th>
+              <th>Data Processed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {subprocessors.map(sp => (
+              <tr>
+                <td class="sp-name">
+                  <strong>{sp.name}</strong>
+                </td>
+                <td>{sp.purpose}</td>
+                <td class="sp-location">{sp.location}</td>
+                <td class="sp-data">{sp.data}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-section--alt">
+    <div class="ip-section-inner ip-section-inner--narrow">
+      <div class="ip-prose">
+        <h2>Standard Contractual Clauses</h2>
+        <p>Where personal data originating in the European Economic Area (EEA), United Kingdom, or Switzerland is transferred to subprocessors located outside those regions, such transfers are governed by the European Commission's Standard Contractual Clauses (SCCs) or equivalent transfer mechanisms. AnyInterview has executed SCCs or equivalent agreements with all subprocessors processing EEA personal data.</p>
+
+        <h2>Subprocessor Security Standards</h2>
+        <p>All subprocessors are required to maintain security standards at least equivalent to those described in our <a href="/dpa">Data Processing Agreement</a>. AnyInterview conducts annual due diligence reviews of subprocessors, including review of their compliance certifications (SOC 2, ISO 27001, or equivalent) and data processing agreements.</p>
+
+        <h2>Historical Changes</h2>
+        <p>This is the current subprocessor list as of May 2026. No subprocessors have been added or removed since January 1, 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ip-closing">
+    <div class="ip-closing-inner">
+      <h2>Questions about how we handle data? <em>We're open.</em></h2>
+      <p>Our DPO responds to all data processing inquiries within 2 business days.</p>
+      <a href="mailto:dpo@anyinterview.to" class="ip-cta-primary">Email dpo@anyinterview.to →</a>
+    </div>
+  </section>
+
+</InnerLayout>
+
+<style>
+  .ip-prose { color: var(--ink-soft); }
+  .ip-prose h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin: 48px 0 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--rule);
+  }
+  .ip-prose h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+  .ip-prose p { font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
+  .ip-prose a { color: var(--accent); }
+
+  .sp-notice {
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .sp-notice strong { color: var(--ink); }
+  .sp-notice a { color: var(--accent); }
+
+  .sp-table-wrapper { overflow-x: auto; }
+  .sp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .sp-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 12px 16px;
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  .sp-table td {
+    padding: 16px;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    line-height: 1.55;
+    vertical-align: top;
+  }
+  .sp-table tr:hover td { background: var(--paper-warm); }
+  .sp-name { white-space: nowrap; min-width: 180px; }
+  .sp-name strong { color: var(--ink); font-weight: 500; }
+  .sp-location { min-width: 200px; }
+  .sp-data { min-width: 260px; }
+</style>
