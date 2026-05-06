@@ -74,3 +74,22 @@ body::before {
 .db-cell-action { justify-content: flex-end; }
 .db-invite-btn { font-size: 12px; font-weight: 500; color: var(--accent); background: var(--accent-faint); border: 1px solid var(--accent-soft); padding: 5px 12px; border-radius: 100px; cursor: pointer; transition: all 0.18s ease; white-space: nowrap; }
 .db-invite-btn:hover { background: var(--accent-soft); transform: translateY(-1px); }
+
+/* ── OutputPreview: right-col + scores card ── */
+.output-composition { align-items: stretch !important; }
+.right-col { display: flex; flex-direction: column; gap: 16px; }
+.scores-card { background: var(--white); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.scores-body { display: flex !important; align-items: center; justify-content: center; padding: 24px 20px; }
+.score-dial { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.dial-svg { width: 90px !important; height: 90px !important; display: block !important; }
+.dial-track { fill: none; stroke: var(--rule); stroke-width: 7; }
+.dial-progress { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; }
+.dial-progress--alt { stroke: var(--ink); opacity: 0.75; }
+.dial-number { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500; fill: var(--ink); letter-spacing: -0.02em; }
+.score-label { font-size: 12px; font-weight: 500; color: var(--ink); letter-spacing: 0.01em; line-height: 1; }
+.score-sub { font-size: 11px; color: var(--ink-mute); line-height: 1; margin-top: 2px; }
+.score-divider { width: 1px; height: 80px; background: var(--rule); flex: 0 0 auto; margin: 0 4px; }
+.summary-card { flex: 1; min-height: 0; }
+
+/* Fix display:flex overriding [hidden] on studio panes */
+.studio-voice[hidden], .studio-settings[hidden] { display: none !important; }

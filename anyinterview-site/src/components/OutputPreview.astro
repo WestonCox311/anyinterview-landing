@@ -73,59 +73,91 @@
         </div>
       </div>
 
-      <div class="summary-card">
-        <div class="card-header">
-          <div class="card-header-left">
-            <div>
-              <div class="card-eyebrow">AI Summary</div>
-              <div class="card-title">Auto-generated, reviewable</div>
+      <div class="right-col">
+
+        <div class="scores-card">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div>
+                <div class="card-eyebrow">Scores</div>
+                <div class="card-title">Auto-evaluated</div>
+              </div>
+            </div>
+          </div>
+          <div class="scores-body">
+            <div class="score-dial">
+              <svg class="dial-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle class="dial-track" cx="50" cy="50" r="38"/>
+                <circle class="dial-progress" cx="50" cy="50" r="38"
+                  stroke-dasharray="238.76" stroke-dashoffset="31.04"
+                  transform="rotate(-90 50 50)"/>
+                <text x="50" y="50" class="dial-number" text-anchor="middle" dominant-baseline="central">87</text>
+              </svg>
+              <div class="score-label">Communication</div>
+              <div class="score-sub">Skills</div>
+            </div>
+            <div class="score-divider"></div>
+            <div class="score-dial">
+              <svg class="dial-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle class="dial-track" cx="50" cy="50" r="38"/>
+                <circle class="dial-progress dial-progress--alt" cx="50" cy="50" r="38"
+                  stroke-dasharray="238.76" stroke-dashoffset="19.10"
+                  transform="rotate(-90 50 50)"/>
+                <text x="50" y="50" class="dial-number" text-anchor="middle" dominant-baseline="central">92</text>
+              </svg>
+              <div class="score-label">Technical</div>
+              <div class="score-sub">Skills</div>
             </div>
           </div>
         </div>
 
-        <div class="summary-body">
-          <div class="summary-section">
-            <h4>Bottom line</h4>
-            <div class="summary-tldr">
-              Strong technical operator. Clear thinking on <em>reliability tradeoffs</em>, opinionated about defaults, owns the operational consequences of her design choices.
+        <div class="summary-card">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div>
+                <div class="card-eyebrow">AI Summary</div>
+                <div class="card-title">Auto-generated, reviewable</div>
+              </div>
             </div>
           </div>
 
-          <div class="summary-section">
-            <h4>Strengths</h4>
-            <ul class="summary-points">
-              <li><span class="marker">+</span><span>Explicit about tradeoffs, not just decisions</span></li>
-              <li><span class="marker">+</span><span>Real operational ownership — measures herself on outcomes</span></li>
-              <li><span class="marker">+</span><span>Healthy skepticism toward complexity</span></li>
-            </ul>
+          <div class="summary-body">
+            <div class="summary-section">
+              <h4>Bottom line</h4>
+              <div class="summary-tldr">
+                Strong technical operator. Clear on <em>reliability tradeoffs</em>, opinionated about defaults, owns the operational consequences of her design choices.
+              </div>
+            </div>
+
+            <div class="summary-section">
+              <h4>Strengths</h4>
+              <ul class="summary-points">
+                <li><span class="marker">+</span><span>Explicit about tradeoffs, not just decisions</span></li>
+                <li><span class="marker">+</span><span>Real operational ownership — measures herself on outcomes</span></li>
+                <li><span class="marker">+</span><span>Healthy skepticism toward complexity</span></li>
+              </ul>
+            </div>
+
+            <div class="summary-section">
+              <h4>Worth probing</h4>
+              <ul class="summary-points">
+                <li><span class="marker">?</span><span>Cross-team disagreement examples were thinner</span></li>
+                <li><span class="marker">?</span><span>Limited recent exposure to multi-region systems</span></li>
+              </ul>
+            </div>
           </div>
 
-          <div class="summary-section">
-            <h4>Worth probing</h4>
-            <ul class="summary-points">
-              <li><span class="marker">?</span><span>Cross-team disagreement examples were thinner</span></li>
-              <li><span class="marker">?</span><span>Limited recent exposure to multi-region systems</span></li>
-            </ul>
-          </div>
-
-          <div class="summary-section">
-            <h4>Memorable moment</h4>
-            <div class="summary-quote">
-              "We got from sixty percent reliability to four-nines without doubling the team."
-              <span class="attr">— 02:21, on rebuilding the notification system</span>
+          <div class="summary-footer">
+            <span class="export-label">Export</span>
+            <div class="export-formats">
+              <a href="#" class="export-fmt">PDF</a>
+              <a href="#" class="export-fmt">DOCX</a>
+              <a href="#" class="export-fmt">ATS</a>
+              <a href="#" class="export-fmt">JSON</a>
             </div>
           </div>
         </div>
 
-        <div class="summary-footer">
-          <span class="export-label">Export</span>
-          <div class="export-formats">
-            <a href="#" class="export-fmt">PDF</a>
-            <a href="#" class="export-fmt">DOCX</a>
-            <a href="#" class="export-fmt">ATS</a>
-            <a href="#" class="export-fmt">JSON</a>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -179,17 +211,25 @@
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 24px;
+    align-items: stretch;
     max-width: 1080px;
     margin: 0 auto;
   }
 
   .transcript-card,
+  .scores-card,
   .summary-card {
     background: var(--white);
     border: 1px solid var(--rule);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+  }
+
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .card-header {
@@ -294,17 +334,90 @@
     color: var(--ink);
   }
 
-  .summary-card {
+  /* ── Scores card ── */
+  .scores-body {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 24px 20px;
   }
 
-  .summary-body {
-    padding: 22px;
+  .score-dial {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dial-svg {
+    width: 90px;
+    height: 90px;
+    display: block;
+  }
+
+  .dial-track {
+    fill: none;
+    stroke: var(--rule);
+    stroke-width: 7;
+  }
+
+  .dial-progress {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 7;
+    stroke-linecap: round;
+  }
+  .dial-progress--alt {
+    stroke: var(--ink);
+    opacity: 0.75;
+  }
+
+  .dial-number {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    fill: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .score-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+  .score-sub {
+    font-size: 11px;
+    color: var(--ink-mute);
+    line-height: 1;
+  }
+
+  .score-divider {
+    width: 1px;
+    height: 80px;
+    background: var(--rule);
+    flex: 0 0 auto;
+    margin: 0 4px;
+  }
+
+  /* ── Summary card ── */
+  .summary-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .summary-body {
+    padding: 18px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
   }
 
   .summary-section h4 {
@@ -313,14 +426,14 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-mute);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .summary-tldr {
     font-family: 'Fraunces', serif;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 1.55;
+    font-size: 14px;
+    line-height: 1.5;
     color: var(--ink);
     letter-spacing: -0.005em;
   }
@@ -333,14 +446,14 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
   }
   .summary-points li {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12.5px;
+    line-height: 1.45;
     color: var(--ink-soft);
     display: flex;
-    gap: 10px;
+    gap: 9px;
     align-items: flex-start;
   }
   .summary-points .marker {
@@ -356,39 +469,18 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
     font-weight: 500;
-    margin-top: 2px;
-  }
-
-  .summary-quote {
-    background: var(--paper-cool);
-    border-left: 2px solid var(--accent);
-    padding: 12px 14px;
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: var(--ink);
-    border-radius: 0 8px 8px 0;
-  }
-  .summary-quote .attr {
-    display: block;
-    margin-top: 6px;
-    font-style: normal;
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: var(--ink-mute);
-    letter-spacing: 0.01em;
+    margin-top: 1px;
   }
 
   .summary-footer {
     border-top: 1px solid var(--rule);
-    padding: 14px 22px;
+    padding: 12px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
     background: var(--paper-cool);
+    flex-shrink: 0;
   }
   .export-label {
     font-size: 11.5px;
@@ -417,5 +509,7 @@
 
   @media (max-width: 900px) {
     .output-composition { grid-template-columns: 1fr; }
+    .right-col { flex-direction: row; flex-wrap: wrap; }
+    .scores-card, .summary-card { flex: 1 1 260px; }
   }
 </style>

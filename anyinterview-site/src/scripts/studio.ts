@@ -8,6 +8,9 @@ const studioStage = document.getElementById('studio-stage')!;
 const messages = document.getElementById('messages')!;
 const studioScroll = document.getElementById('studioScroll')!;
 const studioParticipants = document.getElementById('studioParticipants')!;
+const studioVoice = document.getElementById('studioVoice')!;
+const studioSettings = document.getElementById('studioSettings')!;
+const studioShareBtn = document.getElementById('studioShareBtn') as HTMLButtonElement | null;;
 const composerInput = document.getElementById('composerInput') as HTMLTextAreaElement;
 const heroInput = document.getElementById('heroInput') as HTMLTextAreaElement;
 const heroForm = document.getElementById('heroForm') as HTMLFormElement;
@@ -182,6 +185,9 @@ export function returnHome(): void {
     document.querySelector<HTMLElement>('.studio-tab[data-pane="structure"]')?.classList.add('active');
     studioScroll.hidden = false;
     studioParticipants.hidden = true;
+    studioVoice.hidden = true;
+    studioSettings.hidden = true;
+    if (studioShareBtn) studioShareBtn.hidden = false;
     if (heroInput) heroInput.focus();
   }, 400);
 }
@@ -263,6 +269,11 @@ document.querySelectorAll<HTMLElement>('.studio-tab').forEach(tab => {
     const pane = tab.dataset.pane;
     studioScroll.hidden = pane !== 'structure';
     studioParticipants.hidden = pane !== 'participants';
+    studioVoice.hidden = pane !== 'voice';
+    studioSettings.hidden = pane !== 'settings';
+    if (studioShareBtn) {
+      studioShareBtn.hidden = pane === 'voice' || pane === 'settings';
+    }
   });
 });
 

@@ -148,9 +148,136 @@
     </div>
     <div class="studio-scroll" id="studioScroll"></div>
     <div class="studio-participants" id="studioParticipants" hidden></div>
+
+    <div class="studio-voice" id="studioVoice" hidden>
+      <div class="sv-section">
+        <div class="sv-section-title">AI Interviewer</div>
+        <div class="sv-row">
+          <span class="sv-label">Voice persona</span>
+          <span class="sv-chip">Warm · Curious</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Speaking pace</span>
+          <div class="sv-seg">
+            <button class="sv-seg-btn">Slow</button>
+            <button class="sv-seg-btn active">Normal</button>
+            <button class="sv-seg-btn">Fast</button>
+          </div>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Language</span>
+          <span class="sv-chip">English (US)</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Opening style</span>
+          <span class="sv-chip">Brief · 15s</span>
+        </div>
+      </div>
+
+      <div class="sv-section">
+        <div class="sv-section-title">Interview Style</div>
+        <div class="sv-row">
+          <span class="sv-label">Follow-up behavior</span>
+          <span class="sv-chip">Adaptive</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Silence handling</span>
+          <span class="sv-chip">Prompt after 4s</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Probing depth</span>
+          <div class="sv-seg">
+            <button class="sv-seg-btn">Light</button>
+            <button class="sv-seg-btn active">Standard</button>
+            <button class="sv-seg-btn">Deep</button>
+          </div>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Closing</span>
+          <span class="sv-chip">Debrief prompt</span>
+        </div>
+      </div>
+
+      <div class="sv-section">
+        <div class="sv-section-title">Preview</div>
+        <div class="sv-preview">
+          <div class="sv-wave" aria-hidden="true">
+            <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+              <path d="M0,20 Q10,8 20,20 Q30,32 40,20 Q50,8 60,20 Q70,32 80,20 Q90,8 100,20 Q110,32 120,20 Q130,8 140,20 Q150,32 160,20 Q170,8 180,20 Q190,32 200,20" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.4"/>
+              <path d="M0,20 Q8,12 16,20 Q24,28 32,20 Q40,10 48,20 Q56,30 64,20 Q72,11 80,20 Q88,29 96,20 Q104,9 112,20 Q120,31 128,20 Q136,12 144,20 Q152,28 160,20 Q168,10 176,20 Q184,30 200,20" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.7"/>
+            </svg>
+          </div>
+          <button class="sv-play-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Preview voice
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="studio-settings" id="studioSettings" hidden>
+      <div class="sv-section">
+        <div class="sv-section-title">Interview</div>
+        <div class="sv-row">
+          <span class="sv-label">Duration</span>
+          <span class="sv-chip">~30 min</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Recording</span>
+          <span class="sv-chip">Voice only</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Auto-transcribe</span>
+          <span class="sv-toggle sv-toggle--on" role="switch" aria-checked="true"><span class="sv-toggle-knob"></span></span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Skip empty turns</span>
+          <span class="sv-toggle sv-toggle--on" role="switch" aria-checked="true"><span class="sv-toggle-knob"></span></span>
+        </div>
+      </div>
+
+      <div class="sv-section">
+        <div class="sv-section-title">Access &amp; Privacy</div>
+        <div class="sv-row">
+          <span class="sv-label">Link expiry</span>
+          <span class="sv-chip">7 days</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Max participants</span>
+          <span class="sv-chip">Unlimited</span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Require consent</span>
+          <span class="sv-toggle sv-toggle--on" role="switch" aria-checked="true"><span class="sv-toggle-knob"></span></span>
+        </div>
+        <div class="sv-row">
+          <span class="sv-label">Data retention</span>
+          <span class="sv-chip">30 days</span>
+        </div>
+      </div>
+
+      <div class="sv-section">
+        <div class="sv-section-title">Notifications</div>
+        <div class="sv-row">
+          <div>
+            <span class="sv-label">On completion</span>
+            <div class="sv-sublabel">Email when each session ends</div>
+          </div>
+          <span class="sv-toggle sv-toggle--on" role="switch" aria-checked="true"><span class="sv-toggle-knob"></span></span>
+        </div>
+        <div class="sv-row">
+          <div>
+            <span class="sv-label">Daily digest</span>
+            <div class="sv-sublabel">Summary of all activity</div>
+          </div>
+          <span class="sv-toggle" role="switch" aria-checked="false"><span class="sv-toggle-knob"></span></span>
+        </div>
+      </div>
+    </div>
+
     <div class="studio-footer">
       <button class="btn-secondary">Save draft</button>
-      <button class="btn-primary">Get share link →</button>
+      <button class="btn-primary" id="studioShareBtn">Get share link →</button>
     </div>
   </aside>
 
@@ -663,6 +790,119 @@
     padding-top: 12px;
     border-top: 1px solid var(--rule);
   }
+
+  /* ── Voice & Settings panes ── */
+  .studio-voice,
+  .studio-settings {
+    flex: 1; overflow-y: auto;
+    padding: 20px 24px 24px;
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .studio-voice::-webkit-scrollbar,
+  .studio-settings::-webkit-scrollbar { width: 6px; }
+  .studio-voice::-webkit-scrollbar-thumb,
+  .studio-settings::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+
+  .sv-section { display: flex; flex-direction: column; gap: 4px; }
+
+  .sv-section-title {
+    font-size: 10.5px; font-weight: 600;
+    letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 0 2px 8px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 4px;
+  }
+
+  .sv-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+
+  .sv-label {
+    font-size: 13px; color: var(--ink-soft);
+    font-weight: 450; flex-shrink: 0;
+  }
+
+  .sv-sublabel {
+    font-size: 11px; color: var(--ink-faint);
+    margin-top: 2px; line-height: 1.3;
+  }
+
+  .sv-chip {
+    font-size: 12px; font-weight: 500;
+    color: var(--ink);
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    padding: 3px 10px; border-radius: 100px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  .sv-seg {
+    display: flex; gap: 2px;
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    border-radius: 8px; padding: 2px;
+    flex-shrink: 0;
+  }
+  .sv-seg-btn {
+    font-size: 11.5px; font-weight: 450;
+    color: var(--ink-mute);
+    padding: 3px 9px; border-radius: 6px;
+    transition: all 0.15s ease;
+  }
+  .sv-seg-btn.active {
+    background: var(--white);
+    color: var(--ink);
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+
+  .sv-toggle {
+    flex-shrink: 0;
+    width: 34px; height: 20px;
+    border-radius: 100px;
+    background: var(--rule);
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .sv-toggle--on { background: var(--accent); }
+  .sv-toggle-knob {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    transition: left 0.2s ease;
+  }
+  .sv-toggle--on .sv-toggle-knob { left: 17px; }
+
+  .sv-preview {
+    background: var(--paper-cool);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .sv-wave { width: 100%; height: 40px; }
+  .sv-wave svg { width: 100%; height: 100%; }
+  .sv-play-btn {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 13px; font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-faint);
+    border: 1px solid var(--accent-soft);
+    padding: 7px 16px; border-radius: 100px;
+    transition: all 0.15s ease;
+  }
+  .sv-play-btn:hover { background: var(--accent-soft); }
+  .sv-play-btn svg { width: 11px; height: 11px; fill: var(--accent); stroke: none; }
 
   .studio-footer {
     padding: 14px 24px;
