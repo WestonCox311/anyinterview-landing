@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd anyinterview-site && npm install && npm run build",
-  "outputDirectory": "anyinterview-site/dist",
-  "installCommand": "echo 'skip root install'"
-}
