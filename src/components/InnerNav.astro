@@ -1,0 +1,238 @@
+---
+const pathname = Astro.url.pathname;
+---
+<header class="inner-nav">
+  <div class="inner-nav-bar">
+
+    <a href="/" class="wordmark"><span class="wordmark-any">Any</span>Interview<span class="dot">.to</span></a>
+
+    <nav class="inner-nav-links" id="innerNavLinks">
+
+      <div class="nav-group">
+        <span class="nav-group-label">For</span>
+        <div class="nav-group-links">
+          <a href="/for/hiring">Hiring</a>
+          <a href="/for/customer-discovery">Customer Discovery</a>
+          <a href="/for/user-research">User Research</a>
+          <a href="/for/legal-intake">Legal Intake</a>
+          <a href="/for/hr-people">HR &amp; People</a>
+          <a href="/for/audit-compliance">Audit &amp; Compliance</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-label">Product</span>
+        <div class="nav-group-links">
+          <a href="/how-it-works">How It Works</a>
+          <a href="/templates">Templates</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/integrations">Integrations</a>
+          <a href="/api">API</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-label">Resources</span>
+        <div class="nav-group-links">
+          <a href="/docs">Docs</a>
+          <a href="/help">Help</a>
+          <a href="/security">Security</a>
+          <a href="/trust">Trust</a>
+          <a href="/status">Status</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="inner-nav-cta">
+      <a href="#" class="inner-nav-btn" data-action="open-demo">Book a Demo</a>
+    </div>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<style>
+  .inner-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .inner-nav-bar {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 0 32px;
+    padding: 0 clamp(20px, 5vw, 56px);
+    height: 60px;
+  }
+
+  /* Wordmark */
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .wordmark-any { color: var(--accent); }
+  .wordmark .dot {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Nav groups */
+  .inner-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .nav-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    border-right: 1px solid var(--rule);
+    height: 60px;
+    justify-content: center;
+    gap: 3px;
+  }
+  .nav-group:first-child { padding-left: 0; }
+  .nav-group:last-child { border-right: none; }
+
+  .nav-group-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+  }
+
+  .nav-group-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .nav-group-links a {
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    color: var(--ink-soft);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+  }
+  .nav-group-links a:hover { color: var(--accent); }
+
+  /* CTA */
+  .inner-nav-cta { flex-shrink: 0; }
+
+  .inner-nav-btn {
+    background: var(--accent);
+    color: var(--paper);
+    padding: 8px 16px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .inner-nav-btn:hover { background: var(--accent-bright); transform: translateY(-1px); }
+
+  /* Hamburger */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Responsive: hide groups at 1100px, show at wide */
+  @media (max-width: 1100px) {
+    .nav-group-links a { font-size: 12px; }
+    .nav-group { padding: 0 14px; gap: 2px; }
+  }
+
+  @media (max-width: 900px) {
+    .inner-nav-bar { grid-template-columns: auto 1fr auto auto; }
+    .inner-nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .inner-nav-links.is-open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      padding: 20px clamp(20px, 5vw, 56px) 24px;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .nav-group {
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 0 0 16px;
+      width: 100%;
+    }
+    .nav-group:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .nav-group-links { flex-wrap: wrap; gap: 10px 16px; }
+  }
+
+  @media (max-width: 500px) {
+    .inner-nav-cta { display: none; }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById('navHamburger');
+  const navLinks = document.getElementById('innerNavLinks');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('is-open', !expanded);
+    });
+  }
+</script>

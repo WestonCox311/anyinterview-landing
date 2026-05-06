@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import Nav from '../components/Nav.astro';
+import InnerNav from '../components/InnerNav.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -15,7 +15,7 @@ const { title, description, schema, canonical, ogImage } = Astro.props;
 ---
 <BaseLayout title={title} description={description} schema={schema} canonical={canonical} ogImage={ogImage}>
   <div class="inner-page">
-    <Nav />
+    <InnerNav />
     <slot />
     <Footer />
   </div>
@@ -91,7 +91,7 @@ const { title, description, schema, canonical, ogImage } = Astro.props;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--ink);
+    background: var(--accent);
     color: var(--paper);
     padding: 14px 26px;
     border-radius: 100px;
@@ -99,8 +99,11 @@ const { title, description, schema, canonical, ogImage } = Astro.props;
     font-size: 15px;
     font-weight: 500;
     transition: background 0.2s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
   }
-  .ip-cta-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .ip-cta-primary:hover { background: var(--accent-bright); transform: translateY(-1px); }
   .ip-cta-secondary {
     font-size: 14.5px;
     color: var(--ink-soft);
