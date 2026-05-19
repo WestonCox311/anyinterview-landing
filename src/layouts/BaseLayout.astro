@@ -14,8 +14,8 @@ interface Props {
 }
 
 const {
-  title = 'AnyInterview — Conduct interviews without being in the room',
-  description = 'Configure a structured conversation in chat. Send a link. Get it back, transcribed and recorded — ready to use.',
+  title = 'AnyInterview — Run 10× the interviews. Zero extra hours.',
+  description = 'Set up your interview in chat, send a link, and get back a transcript, recording, and analysis — no scheduling required.',
   canonical,
   schema,
   ogImage = 'https://anyinterview.to/og-default.png',
@@ -41,6 +41,9 @@ const canonicalUrl = canonical ?? `https://anyinterview.to${Astro.url.pathname}`
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:site_name" content="AnyInterview" />
 
     <!-- Twitter Card -->
