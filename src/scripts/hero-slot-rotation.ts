@@ -4,13 +4,12 @@ const words = document.querySelectorAll<HTMLElement>('.slot-word');
 const heroInput = document.getElementById('heroInput') as HTMLTextAreaElement;
 
 const slotWords = [
-  'capstone selection', 'source interviews', 'discovery calls', 'user research',
+  'source interviews', 'discovery calls', 'user research',
   'churn interviews', 'hiring interviews', 'reference checks', 'audit walkthroughs',
   'witness statements', 'exit interviews'
 ];
 
 const placeholders = [
-  "I need to rank 40 student applicants for our capstone program by Friday…",
   "I want to collect local stories from people across three time zones…",
   "I want to talk to early-stage SaaS founders about onboarding…",
   "I need to run a usability study on our new checkout flow…",
@@ -22,7 +21,7 @@ const placeholders = [
   "I want to do exit interviews for departing employees…"
 ];
 
-const dwellTimes = [2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000];
+const dwellTimes = [2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000];
 const transitionMs = 400;
 const placeholderFadeMs = 300;
 const initialDelayMs = 1500;
