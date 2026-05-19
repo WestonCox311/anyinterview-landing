@@ -26,8 +26,7 @@
     </h1>
 
     <p class="subhead">
-      Chat to build your interview flow, let AnyInterview handle the rest.<br/>
-      <span class="subhead-second">Pick a use case below to see how it works.</span>
+      Chat to build your interview flow, let AnyInterview handle the rest.
     </p>
 
     <div class="chat-wrap">
@@ -46,6 +45,7 @@
         </button>
       </form>
 
+      <p class="chat-direction">Pick a use case to see how it works —</p>
       <div class="chips">
         <button class="chip" data-prompt="I'm hiring for a senior backend engineer role. The interview should focus on system design, technical depth, and how they think about tradeoffs.">Hiring</button>
         <button class="chip" data-prompt="I want to talk to early-stage SaaS founders about how they handle customer onboarding. 30-minute discovery interview.">Customer discovery</button>
@@ -224,12 +224,22 @@
   .submit-btn:hover { background: var(--accent); transform: scale(1.06); }
   .submit-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; }
 
+  .chat-direction {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-mute);
+    margin-top: 20px;
+    margin-bottom: 2px;
+  }
+
   .chips {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 10px;
-    margin-top: 22px;
+    margin-top: 10px;
   }
   .chip {
     font-size: 13px;
